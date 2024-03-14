@@ -1,0 +1,15 @@
+Tugas Kelompok Mobile Membuat Project Aplikasi Android pencatatan keuangan
+Fitur:
+1. Transaksi Pengeluaran
+2. Transaksi Pemasukan
+3. A Set
+4. AI utk scan bukti pengeluaran (+) 
+5. API untuk konversi mata uang (IDR to USD) (+)
+
+Nama Anggota Kelompok:
+1. Jonathan Natannael Zefanya - 1152200024 (Ketua) ==> (Sub Programmer)
+2. Daffa Nur Fakhri - 1152200027 ==> (Sistem Analis)
+3. Daffa Danindra - 1152200028 ==> (Dokumenter)
+4. Rizky Aditya Putra - 1152200021 ==> (Programmer)
+5. Arief Fahroja - 1152605001 ==> (Designer)
+6. Hilmi (SuS) - 11520000xx ==> (???)
