@@ -6,6 +6,8 @@ Fitur:
 4. AI utk scan bukti pengeluaran (+) 
 5. API untuk konversi mata uang (IDR to USD) (+)
 
+(+) adalah poin tambahan jika terdapat fitur di dalamnya
+
 Nama Anggota Kelompok:
 1. Jonathan Natannael Zefanya - 1152200024 (Ketua) ==> (Sub Programmer)
 2. Daffa Nur Fakhri - 1152200027 ==> (Sistem Analis)

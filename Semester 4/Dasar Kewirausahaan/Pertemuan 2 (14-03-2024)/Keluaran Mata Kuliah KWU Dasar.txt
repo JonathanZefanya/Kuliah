@@ -6,6 +6,7 @@ Wajib:
 3. Milestone III
 4. Milestone IV
 5. Produk / Calon Produk ==> Demo Day (biasanya bagian dari UAS)
+6. Unggah Hasilnya ke Edlink
 
 Opsional
-Prototype
+Terdapat Prototype Produk yang akan dijual
