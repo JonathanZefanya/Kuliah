@@ -10,3 +10,7 @@ Wajib:
 
 Opsional
 Terdapat Prototype Produk yang akan dijual
+
+AI yang disarankan untuk digunakan
+- Gemini
+- https://supercharged.work/
