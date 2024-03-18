@@ -45,7 +45,7 @@ mahasiswa3 = PBO("Fikri", 2, 70) #Object
 # Mencetak Atribut
 print(mahasiswa1.mahasiswa, "Berada di kelas", mahasiswa1.kelas, "Dengan Nilai", mahasiswa1.hitungNilai(), "\n")
 
-# Membuat Fungsi pada object dengan input user
+# Membuat Fungsi pada object dengan atribut di input user
 class PBO:
     # Fungsi Konstruktor
     def __init__(self, namaMahasiswa, Kelas, Nilai):
@@ -64,7 +64,7 @@ mahasiswa1 = PBO(mahasiswa, kelas, nilai)
 # Mencetak Atribut
 print(mahasiswa1.mahasiswa, "Berada di kelas", mahasiswa1.kelas, "Dengan Nilai", mahasiswa1.hitungNilai(), "\n")
 
-# Membuat Fungsi pada object dengan input user dan mencetak bisa lebih dari 1 object tanpa membuat object baru
+# Membuat Fungsi pada object dengan input user dan mencetak bisa lebih dari 1 object dengan cara perulangan
 class PBO:
     # Fungsi Konstruktor
     def __init__(self, namaMahasiswa, Kelas, Nilai):
