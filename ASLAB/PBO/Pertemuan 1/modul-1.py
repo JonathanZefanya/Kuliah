@@ -1,91 +1,91 @@
-# Membuat Object
-# Object adalah instance dari class
-class PBO: #Template
-    pass
-pbo_if_a = PBO() #Object
-# Mencetak Object
-print(pbo_if_a ,"\n")
+# # Membuat Object
+# # Object adalah instance dari class
+# class PBO: #Template
+#     pass
+# pbo_if_a = PBO() #Object
+# # Mencetak Object
+# print(pbo_if_a ,"\n")
 
-# Membuat Atribut
-# Atribut adalah karakteristik dari object
-class PBO:
-    pass
-pbo_if_b = PBO() #Object
-pbo_if_b.nama = "PBO IF A 2023" #Atribut
-print(pbo_if_b.nama, "\n")
+# # Membuat Atribut
+# # Atribut adalah karakteristik dari object
+# class PBO:
+#     pass
+# pbo_if_b = PBO() #Object
+# pbo_if_b.nama = "PBO IF A 2023" #Atribut
+# print(pbo_if_b.nama, "\n")
 
-# Membuat Atribut menggunakan metode konstruktor
-class PBO:
-    # Fungsi Konstruktor
-    def __init__(self, namaMahasiswa, Kelas):
-        self.mahasiswa = namaMahasiswa
-        self.kelas = Kelas
-# Membuat Object
-mahasiswa1 = PBO("Faris", "PBO IF A 2023") #Object
-mahasiswa2 = PBO("Fahmi", "PBO IF B 2023") #Object
-# Mencetak Object
-print(mahasiswa1)
-# Mencetak Atribut
-print(mahasiswa1.mahasiswa, "Berada di kelas", mahasiswa1.kelas, "\n")
+# # Membuat Atribut menggunakan metode konstruktor
+# class PBO:
+#     # Fungsi Konstruktor
+#     def __init__(self, namaMahasiswa, Kelas):
+#         self.mahasiswa = namaMahasiswa
+#         self.kelas = Kelas
+# # Membuat Object
+# mahasiswa1 = PBO("Faris", "PBO IF A 2023") #Object
+# mahasiswa2 = PBO("Fahmi", "PBO IF B 2023") #Object
+# # Mencetak Object
+# print(mahasiswa1)
+# # Mencetak Atribut
+# print(mahasiswa1.mahasiswa, "Berada di kelas", mahasiswa1.kelas, "\n")
 
-# Membuat Fungsi pada object
-class PBO:
-    # Fungsi Konstruktor
-    def __init__(self, namaMahasiswa, Kelas, Nilai):
-        self.mahasiswa = namaMahasiswa
-        self.kelas = Kelas
-        self.nilai = Nilai
-    # Fungsi
-    def hitungNilai(self):
-        return self.nilai * 2
-# Membuat Object
-mahasiswa1 = PBO("Faris", "PBO IF A 2023", 90) #Object
-mahasiswa2 = PBO("Fahmi", "PBO IF B 2023", 80) #Object
-mahasiswa3 = PBO("Fikri", 2, 70) #Object
-# Mencetak Atribut
-print(mahasiswa1.mahasiswa, "Berada di kelas", mahasiswa1.kelas, "Dengan Nilai", mahasiswa1.hitungNilai(), "\n")
+# # Membuat Fungsi pada object
+# class PBO:
+#     # Fungsi Konstruktor
+#     def __init__(self, namaMahasiswa, Kelas, Nilai):
+#         self.mahasiswa = namaMahasiswa
+#         self.kelas = Kelas
+#         self.nilai = Nilai
+#     # Fungsi
+#     def hitungNilai(self):
+#         return self.nilai * 2
+# # Membuat Object
+# mahasiswa1 = PBO("Faris", "PBO IF A 2023", 90) #Object
+# mahasiswa2 = PBO("Fahmi", "PBO IF B 2023", 80) #Object
+# mahasiswa3 = PBO("Fikri", 2, 70) #Object
+# # Mencetak Atribut
+# print(mahasiswa1.mahasiswa, "Berada di kelas", mahasiswa1.kelas, "Dengan Nilai", mahasiswa1.hitungNilai(), "\n")
 
-# Membuat Fungsi pada object dengan atribut di input user
-class PBO:
-    # Fungsi Konstruktor
-    def __init__(self, namaMahasiswa, Kelas, Nilai):
-        self.mahasiswa = namaMahasiswa
-        self.kelas = Kelas
-        self.nilai = Nilai
-    # Fungsi
-    def hitungNilai(self):
-        return self.nilai * 2
-# Membuat Atribut
-mahasiswa = input("Masukkan Nama Mahasiswa: ")
-kelas = input("Masukkan Kelas: ")
-nilai = int(input("Masukkan Nilai: "))
-# Membuat Object
-mahasiswa1 = PBO(mahasiswa, kelas, nilai)
-# Mencetak Atribut
-print(mahasiswa1.mahasiswa, "Berada di kelas", mahasiswa1.kelas, "Dengan Nilai", mahasiswa1.hitungNilai(), "\n")
+# # Membuat Fungsi pada object dengan atribut di input user
+# class PBO:
+#     # Fungsi Konstruktor
+#     def __init__(self, namaMahasiswa, Kelas, Nilai):
+#         self.mahasiswa = namaMahasiswa
+#         self.kelas = Kelas
+#         self.nilai = Nilai
+#     # Fungsi
+#     def hitungNilai(self):
+#         return self.nilai * 2
+# # Membuat Atribut
+# mahasiswa = input("Masukkan Nama Mahasiswa: ")
+# kelas = input("Masukkan Kelas: ")
+# nilai = int(input("Masukkan Nilai: "))
+# # Membuat Object
+# mahasiswa1 = PBO(mahasiswa, kelas, nilai)
+# # Mencetak Atribut
+# print(mahasiswa1.mahasiswa, "Berada di kelas", mahasiswa1.kelas, "Dengan Nilai", mahasiswa1.hitungNilai(), "\n")
 
-# Membuat Fungsi pada object dengan input user dan mencetak bisa lebih dari 1 object dengan cara perulangan
-class PBO:
-    # Fungsi Konstruktor
-    def __init__(self, namaMahasiswa, Kelas, Nilai):
-        self.mahasiswa = namaMahasiswa
-        self.kelas = Kelas
-        self.nilai = Nilai
-    # Fungsi
-    def hitungNilai(self):
-        return self.nilai * 2
-# Membuat Object
-kumpulanMahasiswa = []
-pilihan = int(input("Masukkan Jumlah Mahasiswa: "))
-for i in range(pilihan):
-    mahasiswa = input("Masukkan Nama Mahasiswa: ")
-    kelas = input("Masukkan Kelas: ")
-    nilai = int(input("Masukkan Nilai: "))
-    mahasiswa = PBO(mahasiswa, kelas, nilai)
-    kumpulanMahasiswa.append(mahasiswa)
-# Mencetak Atribut
-for mahasiswa in kumpulanMahasiswa:
-    print(mahasiswa.mahasiswa, "Berada di kelas", mahasiswa.kelas, "Dengan Nilai", mahasiswa.hitungNilai(), "\n")
+# # Membuat Fungsi pada object dengan input user dan mencetak bisa lebih dari 1 object dengan cara perulangan
+# class PBO:
+#     # Fungsi Konstruktor
+#     def __init__(self, namaMahasiswa, Kelas, Nilai):
+#         self.mahasiswa = namaMahasiswa
+#         self.kelas = Kelas
+#         self.nilai = Nilai
+#     # Fungsi
+#     def hitungNilai(self):
+#         return self.nilai * 2
+# # Membuat Object
+# kumpulanMahasiswa = []
+# pilihan = int(input("Masukkan Jumlah Mahasiswa: "))
+# for i in range(pilihan):
+#     mahasiswa = input("Masukkan Nama Mahasiswa: ")
+#     kelas = input("Masukkan Kelas: ")
+#     nilai = int(input("Masukkan Nilai: "))
+#     mahasiswa = PBO(mahasiswa, kelas, nilai)
+#     kumpulanMahasiswa.append(mahasiswa)
+# # Mencetak Atribut
+# for mahasiswa in kumpulanMahasiswa:
+#     print(mahasiswa.mahasiswa, "Berada di kelas", mahasiswa.kelas, "Dengan Nilai", mahasiswa.hitungNilai(), "\n")
 
 
 # Tugas
