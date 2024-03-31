@@ -57,6 +57,11 @@ naruto = Anime_shounen('Naruto')
 print(naruto.name) # Cara mengakses public attribute
 print(naruto._Anime__show()) # Cara mengakses private method
 
+# naruto._Anime__show() merupakan name mangling, yaitu cara untuk mengakses private method
+# name mangling tidak disaranakan karena dapat merusak program
+# name mangling hanya digunakan untuk debugging, bukan untuk diimplementasikan dalam program
+# Untuk diimplementasikan dalam program, gunakan getter dan setter
+
 # 3.2 Setter dan Getter
 # Setter digunakan untuk mengubah nilai dari sebuah atribut
 # Getter digunakan untuk mengakses nilai dari sebuah 
