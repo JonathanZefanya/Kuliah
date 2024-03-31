@@ -1,3 +1,6 @@
+# Praktikum ke-3 Pemrograman Berorientasi Objek
+# Studi Kasus : Adu Kekuatan Karakter Anime Naruto
+
 import random
 
 class Anime:
