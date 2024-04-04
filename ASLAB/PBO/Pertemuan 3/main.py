@@ -1,4 +1,4 @@
-# Enkasulapsi
+    # Enkasulapsi
 
 # 3.1 Akses Modifier
 # Akses Modifier adalah metode yang digunakan untuk mengatur hak akses dari sebuah atribut atau method pada sebuah class
@@ -135,7 +135,7 @@ class Mahasiswa:
         self.nim = nim
     @property
     def show(self):
-        print(f"Nama: {self.nama} NIM: {self.nim}")
+        print(f"Nama: {self.nama} \nNIM: {self.nim}")
         
 Guntur = Mahasiswa('Guntur', 1152700015)
 Guntur.show
