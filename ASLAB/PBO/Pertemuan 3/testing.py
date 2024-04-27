@@ -1,97 +1,182 @@
-# Enkapsulasi
+# 3 Enkasulapsi
 
-# Akses Modifier
-# Public
+# 3.1 Akses Modifeier
+# 3.1.1 Public
 # class Hero:
-#     def __init__(self, nama, hp):
-#         self.nama = nama
-#         self.hp = hp
-# class Hero_Status(Hero):
-#     def __init__(self, nama):
-#         super().__init__(nama, 100)
+#     def __init__(self, name, health,power):
+#         self.name = name
+#         self.health = health
+#         self.power = power
         
-# Zhilong = Hero_Status("Zhilong")
-# print(Zhilong.nama, "dan", Zhilong.hp)
+# class Status_Hero(Hero):
+#     def __init__(self, name):
+#         super().__init__(name,100,100)
+        
+# nana = Status_Hero('Nana')
+# print(f"""
+#       Nama Hero: {nana.name}
+#       HP hero: {nana.health}
+#       Power hero: {nana.power}
+#       """)
 
-# Protected
+# 3.1.2 Protected
 # class Hero:
-#     def __init__(self, nama, hp, power):
-#         self._nama = nama
-#         self._hp = hp
+#     def __init__(self, name, health,power):
+#         self.name = name
+#         self._health = health
 #         self._power = power
-#     def _buff(self, buff):
-#         print("Total Power:", self._power + buff)
-# class Hero_Status(Hero):
-#     def __init__(self, nama, hp, power):
-#         super().__init__(nama, hp, power)
-#     def _Debuff(self, debuff):
-#         print("Total Power:",self._power - debuff)
+        
+# class Status_Hero(Hero):
+#     def __init__(self, name):
+#         super().__init__(name,100,100)
+        
+# nana = Status_Hero('Nana')
+# print(f"""
+#       Nama Hero: {nana.name}
+#       HP hero: {nana._health}
+#       Power hero: {nana._power}
+#       """)
 
-# Zhilong = Hero("Zhilong", 100, 200)
-# Zhilong._buff(300)
-# Nana = Hero_Status("Nana", 100, 200)
-# Nana._power = 200
-# Nana.Debuff(100)
+# 3.1.3 Private
+# class Hero:
+#     def __init__(self, name, health,power):
+#         self.name = name
+#         self.__health = health
+#         self.__power = power
+#     def __show(self):
+#         print(f"Nama hero: {self.name} memiliki power sebesar {self.__power}")
+        
+# class Status_Hero(Hero):
+#     def __init__(self, name):
+#         super().__init__(name,100,100)
+        
+# nana = Status_Hero('Nana')
+# print(nana._Hero__show())
 
-# Private
+# 3.2 Setter dan Getter
 # class IF:
 #     def __init__(self, nama, nim):
 #         self.nama = nama
 #         self.__nim = nim
-#     def __cetak(self):
-#         print(f"Nama Mahasiswa: {self.nama} dan NIM mahasiswa tsb adalah {self.__nim}")
-        
+#     def pindahKelas(self, nimBaru):
+#         self.__nim = nimBaru # Setter
+#     def getNim(self):# Getter
+#         return self.__nim
+#     def show(self):
+#         print(f"Nama: {self.nama} dan NIM: {self.__nim}")
+
 # class IFA(IF):
 #     def __init__(self, nama, nim):
 #         super().__init__(nama, nim)
 
-# Rafi = IFA("Rafi", 1152700015)
-# print(f"Nama Saya: {Rafi.nama}")
-# print(f"NIM saya: {Rafi._IF__nim}")
-# print(Rafi._IF__cetak())
-
-# Setter dan Getter
-# class IF:
+# class IFB(IF):
 #     def __init__(self, nama, nim):
+#         super().__init__(nama, nim)
+
+# Mahasiswa1 = IFB("Guntur", 1152700016)
+# Mahasiswa1.show()
+# Mahasiswa2 = IFA("Tora", 1152700015)
+# Mahasiswa2.show()
+
+# 3.3 Static Method dan Class Method
+# class IF:
+#     __jumlahMahasiswaIF = 0
+#     def __init__(self, nama):
 #         self.nama = nama
-#         self.__nim = nim
-#     def pindah_kelas(self,nimBaru):
-#         self.__nim = nimBaru # Setter
-#     def show_nim(self):
-#         return self.__nim  # Getter
-#     def cetak(self):
-#         print(f"Nama Mahasiswa: {self.nama} dan NIM mahasiswa tsb adalah {self.__nim}")
+#         IF.__jumlahMahasiswaIF += 1
+#     @classmethod
+#     def showJumlahKelas(cls):
+#         print(f"Jumlah Mahasiswa {cls.__name__}: {cls.jumlah}")
+#     @staticmethod
+#     def showJumlahMahasiswa():
+#         print(f"Jumlah Mahasiswa IF: {IF.__jumlahMahasiswaIF}")
+
+# class IFA(IF):
+#     def __init__(self, nama):
+#         super().__init__(nama)
+# class IFB(IF):
+#     jumlah = 0
+#     def __init__(self, nama):
+#         super().__init__(nama)
+#         IFB.jumlah += 1
+
+# Mahasiswa1 = IFA("Ahmad")
+# Mahasiswa2 = IFA("Amay")
+# Mahasiswa3 = IFB("Gado")
+# Mahasiswa4 = IFB("Fahri")
+# Mahasiswa5 = IFB("Yudi")
+
+# IF.showJumlahMahasiswa()
+# IFB.showJumlahKelas()
+
+# 3.4 Property
+# class IFB:
+#     def __init__(self,nama,nim):
+#         self.nama = nama
+#         self.nim = nim
+#     @property
+#     def showMahasiswa(self):
+#         print(f"Nama: {self.nama}\nNIM: {self.nim}")
         
-# Guntur = IF("Guntur", 1152700017)
-# print("Sebelum pindah Kelas: ")
-# Guntur.cetak()
-# print("Sesudah pindah Kelas: ")
-# Guntur.pindah_kelas(1152700032)
-# Guntur.cetak()
+# Mahasiswa = IFB("Tora", 1152700024)
+# Mahasiswa.showMahasiswa
+# Mahasiswa.nama
+# Mahasiswa.nim
 
-# Static Method dan Class Method
-class MerekHP:
-    __jumlah = 0
+# Quick Test
+class IF:
+    __jumlahMahasiswaIF = 0
     def __init__(self, nama):
-         self.nama = nama
-         MerekHP.__jumlah += 1
+        self.nama = nama
+        IF.__jumlahMahasiswaIF += 1
     @classmethod
-    def showmerekhp(cls):
-        print(f"merk hp: {cls.__name__}")
+    def showJumlahKelas(cls):
+        print(f"Jumlah Mahasiswa {cls.__name__}: {cls.jumlah}")
     @staticmethod
-    def showJumlahHP():
-        print(f"Jumlah HP keseluruhan: {MerekHP.__jumlah}")
-class Xiaimi(MerekHP):
+    def showJumlahMahasiswa():
+        print(f"Jumlah Mahasiswa IF: {IF.__jumlahMahasiswaIF}")
+
+class IFA(IF):
     def __init__(self, nama):
         super().__init__(nama)
-class Samsung(MerekHP):
+class IFB(IF):
+    jumlah = 0
     def __init__(self, nama):
         super().__init__(nama)
+        IFB.jumlah += 1
+class IFC(IFB):
+    jumlah = 0
+    def __init__(self, nama):
+        super().__init__(nama)
+        IFC.jumlah += 1
+        
+Mahasiswa1 = IFA("Ahmad")
+Mahasiswa2 = IFA("Amay")
+Mahasiswa3 = IFB("Gado")
+Mahasiswa4 = IFB("Fahri")
+Mahasiswa5 = IFC("Yudi")
+Mahasiswa6 = IFC("Yuga")
 
-samsung_1 = Samsung("Samsung Galaxy A3")
-Xiaomi_1 = Xiaimi("Redmi Note 10A")
-MerekHP.showJumlahHP()
-Samsung.showmerekhp()
-Xiaimi.showmerekhp()
-Samsung.showJumlahHP()
+IFB.showJumlahKelas()
+IFC.showJumlahKelas()
 
+# Part 2
+class IF:
+    def __init__(self, nama, nim, umur):
+        self.nama = nama
+        self.__nim = nim
+        self.__umur = umur
+    def pindahKelas(self, nimBaru,umurBaru):
+        self.__nim = nimBaru # Setter
+    def getNim(self):# Getter
+        return self.__nim, self.__umur
+    def show(self):
+        print(f"Nama: {self.nama} dan NIM: {self.__nim}")
+        print(f"Umur: {self.__umur} Tahun")
+
+class IFB(IF):
+    def __init__(self, nama, nim, umur):
+        super().__init__(nama, nim, umur)
+
+Mahasiswa1 = IFB("Guntur", 1152700016, 18)
+Mahasiswa1.show()
