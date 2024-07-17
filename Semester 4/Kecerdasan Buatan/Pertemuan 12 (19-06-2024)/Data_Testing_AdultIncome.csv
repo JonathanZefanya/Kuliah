@@ -1,0 +1,11 @@
+age,workclass,education,marital-status,occupation,relationship,gender,hours-per-week,native-country,income
+20 - 29,Private,Some-college,Never-married,Other-service,Own-child,Male,15,United-States,<=50K
+20 - 29,Local-gov,Some-college,Never-married,Protective-serv,Own-child,Female,40,United-States,<=50K
+50 - 59,Private,HS-grad,Married-civ-spouse,Machine-op-inspct,Husband,Male,40,United-States,<=50K
+30 - 39,Private,HS-grad,Divorced,Adm-clerical,Unmarried,Female,40,United-States,<=50K
+40 - 49,Private,Bachelors,Married-civ-spouse,Prof-specialty,Husband,Male,40,United-States,>50K
+30 - 39,Local-gov,Some-college,Married-civ-spouse,Craft-repair,Husband,Male,40,United-States,<=50K
+20 - 29,Private,Bachelors,Never-married,Prof-specialty,Own-child,Female,72,United-States,<=50K
+20 - 29,Private,HS-grad,Never-married,Sales,Not-in-family,Female,35,United-States,<=50K
+40 - 49,Private,Some-college,Widowed,Adm-clerical,Not-in-family,Female,60,United-States,<=50K
+40 - 49,Private,HS-grad,Married-civ-spouse,Transport-moving,Husband,Male,45,United-States,<=50K

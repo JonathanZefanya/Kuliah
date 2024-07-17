@@ -1,0 +1,110 @@
+Sebuah aplikasi direncanakan mempunyai karakteristik berikut: 
+
+5 input sederhana 
+3 input sedang 
+2 input rumit 
+8 output sederhana 
+1 output sedang 
+4 output rumit 
+6 inquiry sederhana 
+7 inquiry sedang 
+9 inquiry rumit 
+2 logical file sederhana 
+2 logical file sedang
+2 logical file rumit 
+4 interface sederhana
+5 interface sedang 
+6 interface rumit 
+
+Bobot sederhana diberi score 3
+Bobot sedang diberi score 9
+Bobot rumit diberi score 15 
+
+Complexity adjustment factor (Sigma Fi) sebesar 35 
+
+SOAL :
+1. Tuliskan rumus untuk menentukan Function Point (FP) 
+2. Tentukan nilai function point (FP) untuk aplikasi di atas. 
+3. Jika 1 FP setara dengan 500 ribu Rupiah, berapa perkiraan biaya pembuatan aplikasi tersebut ? 
+4. Jika tim beranggota 3 senior programmer dengan produktivitas masing-masing 5 FP per bulan, berapa lama proyek selesai dikerjakan ? 
+5. Jika gaji 3 programmer tersebut masing-masing Rp 15 juta, dan dalam waktu yang hampir bersamaan tim mendapatkan 3 proyek serupa, apakah tim Anda sehat (mendapat keuntungan) secara finansial?
+6. Berapa jalur komunikasi (communication path) terbentuk pada tim beranggota 3 senior programmer ?   
+7. Jika 1 jalur komunikasi menyebabkan pengurangan produktivitas sebesar 0,5 FP per bulan, berapa produktivitas tim setelah dikurangi oleh komunikasi ? 
+
+Jawab
+
+== Input ==
+input sederhana = 5 × 3 = 15
+input sedang = 3 × 9 = 27
+input rumit = 2 × 15 = 30
+
+== Output ==
+output sederhana = 8 × 3 = 24
+output sedang = 1 × 9 = 9
+output rumit = 4 × 15 = 60
+
+== Inquiry ==
+Inquiry sederhana = 6 × 3 = 18
+Inquiry sedang = 7 × 9 = 63
+Inquiry rumit = 9 × 15 = 135
+
+== Logical File ==
+Logical file sederhana = 2 × 3 = 6
+Logical file sedang = 2 × 9 = 18
+Logical file rumit = 2 × 15 = 30
+
+== Interface ==
+Interface sederhana = 4 × 3 = 12
+Interface sedang = 5 × 9 = 45
+Interface rumit = 6 × 15 = 90
+
+1.
+FP = Count Total × (0,65 + 0,01 x EFi) 
+FP = Count Total × (0,65 + 0,01 x complexity adjustment) 
+
+2.
+Input = (15 + 27 + 30) = 72
+Output = (24 + 9 + 60) = 93
+Inquiry = (18+63+135) = 216
+Logical File = (6+18+30) = 54
+Interface = (12+45+90) = 147
+Count Total = 72+93+216+54+147 = 582
+
+FP = 582 × (0, 65 + 0,01 x complexity adjustment) 
+FP = 582 × (0, 65 + 0,01 × 35)
+FP = 582 × (1,00) 
+FP = 582
+
+
+3. 
+582 × Rp. 0,5 Juta = Rp. 291 Juta 
+
+4. 
+1 Senior = 5 FP/ bulan
+3 Senior = 15 FP/ bulan
+582/15 = 38,8 
+
+38 Bulan 8/10 × 30 Hari = 38 Bulan 24 Hari atau minimal 39 Bulan
+
+5.
+Perkiraan Pendapatan
+1 Orang = Rp. 15 Juta / Bulan
+3 Orang = Rp. 45 Juta / Bulan
+
+Perkiraan Pendapatan yang diberikan saat project selesai:
+3 Project × Rp. 291 Juta/Project = Rp. 873 Juta untuk 3 Project
+
+Pengeluaran gaji progammer untuk 3 Project Dalam waktu bersamaan: 
+Rp. 45 Juta × 40 Bulan = Rp. 1800 Juta = Rp. 1,8 M
+
+Jadi, menurut pendapat saya, tim kurang sehat karena pengeluaran lebih besar dibanding pendapatan (rugi secara finansial) 
+
+6.
+Jalur Komunikasi 3 Orang = (3×2)/2 = 3 Jalur
+
+7.
+Produktivitas tim tanpa komunikasi = 3×5 FP / bulan = 15 FP / Bulan
+
+Pengurangan Produktivitas = 3 Jalur Komunikasi × 0,5 FP / Bulan = 1,5 FP / Bulan
+
+Jadi, produktivitas tim setelah di kurangi komunikasi =  15-1,5  = 13,5 FP / Bulan

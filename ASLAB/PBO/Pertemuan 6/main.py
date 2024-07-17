@@ -1,13 +1,12 @@
 # Hubungan Antar Objek
 
-# 6.1 Asosiasi
+# 6.1 Asosiasi ==> many to many
 class Penjual():
     def __init__(self, nama, barang, harga):
         self.nama = nama
         self.barang = barang
         self.harga = harga
     def jual(self,pembeli):
-        # print(self.nama, "Menjual", self.barang, "Kepada", pembeli.nama, "Dengan Harga", self.harga, "seharga", self.harga)
         print(f"{self.nama} menjual {self.barang} kepada {pembeli.nama} dengan harga {self.harga}")
 class Pembeli():
     def __init__(self, nama):
@@ -16,13 +15,16 @@ class Pembeli():
 def mainProgram():
     print("Hubungan Antar Penjual dan Pembeli")
     Guntur = Penjual("Guntur","Narkoboy","Rp 1.000.000")
-    Guntur = Penjual("Guntur","M4A1","Rp 3.200.000")
+    Amat = Penjual("Amat","M4A1","Rp 3.200.000")
     Ahmid = Pembeli("Ahmid")
     Fahmi = Pembeli("Fahmi")
     Guntur.jual(Fahmi)
+    Guntur.jual(Ahmid)
+    Amat.jual(Fahmi)
+    Amat.jual(Ahmid)
 mainProgram()
 
-# 6.2 Agregasi
+# 6.2 Agregasi ==> One to many
 class Karyawan():
     def __init__(self, nama, umur):
         self.nama = nama
@@ -46,9 +48,10 @@ def main():
     guntur = Karyawan("Guntur",30)
     honor = Honor(5000000, 3000000, 20000000, 1000)
     guntur.info(honor)
+    faris.info(honor)
 main()
 
-# 6.3 Komposisi
+# 6.3 Komposisi ==> One to one
 class Warga():
     def __init__(self,nama):
         self.nama = nama
