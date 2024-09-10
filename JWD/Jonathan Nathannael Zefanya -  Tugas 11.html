@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pemesanan Makanan</title>
+    <style>
+        h2 {
+            text-align: center;
+        }
+        h3 {
+            text-align: center;
+        }
+        table {
+            width: 50%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        .memory-usage, .processing-time {
+            width: 50%;
+            margin: 20px auto;
+            padding: 10px;
+            border: 1px solid black;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h3>Usage Memory dan Time Responses</h3>
+    <h2>Form Pemesanan Makanan</h2>
+    <form id="orderForm">
+        <table>
+            <tr>
+                <th>Nama Makanan</th>
+                <th>Harga</th>
+                <th>Jumlah</th>
+            </tr>
+            <tr>
+                <td>Nasi Goreng</td>
+                <td>Rp10.000</td>
+                <td><input type="number" id="nasiGorengQty" value="0" min="0"></td>
+            </tr>
+            <tr>
+                <td>Ayam Goreng</td>
+                <td>Rp12.000</td>
+                <td><input type="number" id="ayamGorengQty" value="0" min="0"></td>
+            </tr>
+            <tr>
+                <td>Es Teh</td>
+                <td>Rp2.000</td>
+                <td><input type="number" id="esTehQty" value="0" min="0"></td>
+            </tr>
+            <tr>
+                <td>Kopi</td>
+                <td>Rp3.000</td>
+                <td><input type="number" id="kopiQty" value="0" min="0"></td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <button type="button" id="hitungTotal">Hitung Total</button>
+                    <button type="button" id="resetForm">Reset</button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">Total Pesanan: Rp<span id="totalPesanan">0</span></td>
+            </tr>
+        </table>
+    </form>
+
+    <div class="memory-usage" id="memoryUsage">
+        Penggunaan Memori: <span id="memoryUsageValue">0</span> MB
+    </div>
+    <div class="processing-time" id="processingTime">
+        Waktu Pemrosesan: <span id="processingTimeValue">0</span> ms
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#hitungTotal').click(function() {
+                var startTime = performance.now();
+
+                var nasiGorengQty = parseInt($('#nasiGorengQty').val()) || 0;
+                var ayamGorengQty = parseInt($('#ayamGorengQty').val()) || 0;
+                var esTehQty = parseInt($('#esTehQty').val()) || 0;
+                var kopiQty = parseInt($('#kopiQty').val()) || 0;
+
+                var total = (nasiGorengQty * 10000) +
+                            (ayamGorengQty * 12000) +
+                            (esTehQty * 2000) +
+                            (kopiQty * 3000);
+
+                $('#totalPesanan').text(total);
+
+                var endTime = performance.now();
+                var processingTime = endTime - startTime;
+                $('#processingTimeValue').text(processingTime.toFixed(2));
+            });
+
+            $('#resetForm').click(function() {
+                $('#orderForm')[0].reset(); // Mereset semua input field ke nilai default
+                $('#totalPesanan').text('0'); // Mereset total pesanan ke 0
+                $('#processingTimeValue').text('0'); // Mereset waktu pemrosesan ke 0
+            });
+
+            // Function to update memory usage
+            function updateMemoryUsage() {
+                if (performance.memory) {
+                    var usedJSHeapSize = performance.memory.usedJSHeapSize / (1024 * 1024);
+                    $('#memoryUsageValue').text(usedJSHeapSize.toFixed(2));
+                }
+            }
+
+            // Update memory usage periodically
+            setInterval(updateMemoryUsage, 1000);
+        });
+    </script>
+</body>
+</html>
