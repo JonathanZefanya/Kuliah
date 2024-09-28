@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
 class TextController extends GetxController {
-  var text = 'Hello'.obs;
+  var text = 'Hello Traveller'.obs;
 
   void toggleCase() {
     if (text.value == text.value.toLowerCase()) {

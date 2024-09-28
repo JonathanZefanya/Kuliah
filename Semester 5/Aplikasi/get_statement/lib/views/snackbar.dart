@@ -8,14 +8,14 @@ class Page2Snackbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Snackbar Example')),
+      appBar: AppBar(title: const Text('Snackbar')),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
               onPressed: () {
-                Get.snackbar('Hello', 'This is a SnackBar',
+                Get.snackbar('Hello', 'Traveller',
                   snackPosition: SnackPosition.BOTTOM,
                 );
               },

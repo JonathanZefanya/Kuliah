@@ -8,7 +8,7 @@ class Page3Dialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Dialog Example')),
+      appBar: AppBar(title: const Text('Dialog')),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -17,7 +17,7 @@ class Page3Dialog extends StatelessWidget {
               onPressed: () {
                 Get.defaultDialog(
                   title: 'Hello',
-                  middleText: 'This is a dialog',
+                  middleText: 'Traveller',
                 );
               },
               child: const Text('Show Dialog'),

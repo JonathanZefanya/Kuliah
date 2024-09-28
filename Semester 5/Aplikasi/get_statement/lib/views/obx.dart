@@ -11,7 +11,7 @@ class Page1Obx extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Obx Example')),
+      appBar: AppBar(title: const Text('Obx')),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
