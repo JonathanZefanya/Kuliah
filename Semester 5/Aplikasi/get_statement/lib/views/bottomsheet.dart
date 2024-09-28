@@ -8,7 +8,7 @@ class Page4BottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Bottom Sheet Example')),
+      appBar: AppBar(title: const Text('Bottom Sheet')),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -22,12 +22,12 @@ class Page4BottomSheet extends StatelessWidget {
                       children: [
                         ListTile(
                           leading: const Icon(Icons.wb_sunny),
-                          title: const Text('Sun'),
+                          title: const Text('Mode Light'),
                           onTap: () {},
                         ),
                         ListTile(
-                          leading: const Icon(Icons.wb_cloudy),
-                          title: const Text('Cloud'),
+                          leading: const Icon(Icons.wb_sunny_outlined),
+                          title: const Text('Mode Dark'),
                           onTap: () {},
                         ),
                       ],
