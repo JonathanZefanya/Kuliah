@@ -11,11 +11,11 @@ import 'dart:io';
 void main() {
   print('Luas Persegi\n');
   print("Masukkan panjang: ");
-  int panjang = int.parse(stdin.readLineSync()!);
+  num panjang = int.parse(stdin.readLineSync()!);
 
   print("Masukkan lebar: ");
-  int lebar = int.parse(stdin.readLineSync()!);
+  num lebar = int.parse(stdin.readLineSync()!);
 
-  int luas = panjang * lebar;
+  num luas = panjang * lebar;
   print("Luas persegi adalah $luas");
 }
