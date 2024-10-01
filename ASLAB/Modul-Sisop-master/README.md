@@ -19,3 +19,5 @@
 ### [Module 3 - Docker](/Modul3/README-EN.md)
 
 ### [Module 4 - FUSE and Operating System](/Modul4/README-EN.md)
+
+#### [Credit](https://github.com/arsitektur-jaringan-komputer/Modul-Sisop?tab=readme-ov-file)
