@@ -1,38 +1,52 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../controllers/settings_controller.dart';
 
 class SettingsPage extends StatelessWidget {
-  final SettingsController settingsController = Get.find();
-
-  SettingsPage({super.key});
+  const SettingsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Settings'.tr),
+    return AlertDialog(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text('Choose Language:'.tr),
-            ElevatedButton(
-              onPressed: () {
-                settingsController.changeLanguage('en');
+      title: const Text('Settings', style: TextStyle(fontWeight: FontWeight.bold)),
+      content: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          ListTile(
+            title: const Text('Change Language'),
+            trailing: DropdownButton<String>(
+              value: Get.locale?.languageCode,
+              onChanged: (value) {
+                if (value == 'id') {
+                  Get.updateLocale(const Locale('id', 'ID'));
+                } else {
+                  Get.updateLocale(const Locale('en', 'US'));
+                }
               },
-              child: const Text('English'),
+              items: const [
+                DropdownMenuItem(
+                  value: 'en',
+                  child: Text('English'),
+                ),
+                DropdownMenuItem(
+                  value: 'id',
+                  child: Text('Indonesian'),
+                ),
+              ],
             ),
-            ElevatedButton(
-              onPressed: () {
-                settingsController.changeLanguage('id');
-              },
-              child: const Text('Bahasa Indonesia'),
-            ),
-          ],
+          ),
+        ],
+      ),
+      actions: [
+        TextButton(
+          child: const Text('Close'),
+          onPressed: () {
+            Get.back();
+          },
         ),
-      ),
+      ],
     );
   }
 }

@@ -1,0 +1,8 @@
+['Arik', 'Juan', 'David'] ==> Gacor Kang (Parawisata)
+['Apip', 'Jay', 'Putri'] ==> Vincent (Akademik)
+['Daffha', 'Ovada', 'Azril'] ==> Budiono (Bioskop)
+['Samuel', 'Andi', 'Helena'] ==> Pisang Goreng (Penggajian)
+
+Admin Super
+Admin
+User

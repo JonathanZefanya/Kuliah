@@ -1,26 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'pages/category_list_page.dart';
-// import 'pages/settings_page.dart';
-import 'controllers/settings_controller.dart';
+import 'pages/meal_list_page.dart';
+import 'pages/settings_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const MealApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MealApp extends StatelessWidget {
+  const MealApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Meal Categories',
-      initialBinding: BindingsBuilder(() {
-        Get.put(SettingsController()); // Initialize Settings Controller
-      }),
-      locale: const Locale('en'), // Default locale
-      translations: SettingsController(), // Localization setup
-      home: const CategoryListPage(),
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+        fontFamily: 'Roboto',  // Modern font for cleaner UI
+      ),
+      initialRoute: '/',
+      getPages: [
+        GetPage(name: '/', page: () => MealListPage()),
+        GetPage(name: '/settings', page: () => SettingsPage()),
+      ],
     );
   }
 }
