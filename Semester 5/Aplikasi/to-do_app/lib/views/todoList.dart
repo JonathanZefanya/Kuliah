@@ -25,8 +25,8 @@ class TodoList extends StatelessWidget {
           var dataLength = data!.length;
 
           return dataLength == 0
-              ? Center( // Berada di Tengah
-                  // Jika data kosong muncul gambar Nahida dengan ukuran 100 x 100 dan Text "Belum Ada Data Sayang"
+          // Tengah layar
+              ? Center( 
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

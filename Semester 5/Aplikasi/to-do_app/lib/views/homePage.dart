@@ -79,12 +79,12 @@ class _HomepageState extends State<Homepage> {
                   onTap: () {},
                 ),
               ),
-              SizedBox(width: 8.0), // Jarak antara ListTile dan ikon
+              const SizedBox(width: 8.0), // Jarak antara ListTile dan ikon (X)
               IconButton(
                 onPressed: () {
                   widget.deleteFunction(widget.id);
                 },
-                icon: Icon(Icons.close, color: Colors.redAccent), // Ikon warna merah
+                icon: const Icon(Icons.close, color: Colors.redAccent), // Ikon warna merah
               ),
             ],
           ),
