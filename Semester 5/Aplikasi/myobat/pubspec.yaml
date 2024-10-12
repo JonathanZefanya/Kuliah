@@ -1,0 +1,33 @@
+name: myobat
+version: 1.0.0+1
+publish_to: none
+description: A new Flutter project.
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+
+dependencies:
+  cupertino_icons: ^1.0.6
+  flutter:
+    sdk: flutter
+  flutter_local_notifications: ^17.2.3
+  flutter_timezone: ^1.0.8
+  get: 4.6.6
+  sqflite: ^2.3.3
+  timezone: ^0.9.4
+
+dev_dependencies:
+  flutter_lints: ^3.0.0
+  flutter_test:
+    sdk: flutter
+  flutter_launcher_icons: ^0.11.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+  - assets/images/
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/logo.png"
