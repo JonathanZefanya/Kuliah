@@ -9,19 +9,34 @@ class NotificationApi {
   static Future cancelAllNotification() => _notification.cancelAll();
   static Future cancelNotificationByTag(String tag) =>
       _notification.cancel(0, tag: tag);
-
-  static Future init({
+  
+  static Future<void> init({
     bool initScheduled = false,
   }) async {
-    const androidSettings =
+    // Android initialization settings
+    const AndroidInitializationSettings initializationSettingsAndroid = 
         AndroidInitializationSettings('@mipmap/ic_launcher');
-    const settings = InitializationSettings(android: androidSettings);
+
+    // Common initialization settings
+    const InitializationSettings initializationSettings = InitializationSettings(
+      android: initializationSettingsAndroid,
+    );
+
+    // Initialize the plugin
     await _notification.initialize(
-      settings,
+      initializationSettings,
       onDidReceiveNotificationResponse: (payload) async {
-        print('notification payload: $payload');
+        print('Notification payload: $payload');
       },
     );
+  }
+
+  // Callback when a notification is selected
+  static Future selectNotification(String? payload) async {
+    if (payload != null) {
+      print('Notification payload: $payload');
+    }
+    // Handle the notification tap action (navigate to a specific page, etc.)
   }
 
   static Future showNotification({
@@ -89,7 +104,7 @@ class NotificationApi {
     print("before return _scheduledDaily");
 
     return scheduledDate.isBefore(now)
-        ? scheduledDate = scheduledDate.add(const Duration(days: 1))
+        ? scheduledDate.add(const Duration(days: 1))
         : scheduledDate;
   }
 }

@@ -5,6 +5,7 @@
         android:icon="@mipmap/launcher_icon">
         
         <!-- Existing receivers and activities -->
+        <receiver android:name="com.dexterous.flutterlocalnotifications.NotificationBroadcastReceiver" android:exported="true"/>
         <receiver android:exported="false" android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver" />
         <receiver android:exported="false" android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationBootReceiver">
             <intent-filter>
@@ -30,6 +31,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
         

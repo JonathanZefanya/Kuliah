@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:myobat/app/data/medicine.dart';
 import 'package:myobat/app/data/notification.dart' as notif;
+import 'package:myobat/app/utils/notification_api.dart';
 import '../controllers/detail_medicine_controller.dart';
 
 class DetailMedicineView extends GetView<DetailMedicineController> {
@@ -92,6 +93,13 @@ class DetailMedicineView extends GetView<DetailMedicineController> {
                 ),
                 onPressed: () {
                   controller.deleteMedicine(Get.arguments);
+
+                  NotificationApi.showNotification(
+                    id: 99, // A unique ID for this notification
+                    title: 'Kamu Hebat!',
+                    body: 'Terima kasih sudah minum obat tepat waktu.',
+                    payload: 'Congrats notification',
+                  );
                 },
               ),
             ),
