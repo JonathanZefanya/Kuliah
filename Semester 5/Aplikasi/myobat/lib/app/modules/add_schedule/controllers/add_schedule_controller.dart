@@ -5,6 +5,7 @@ import 'package:myobat/app/data/notification.dart' as notif;
 import 'package:myobat/app/helper/db_helper.dart';
 import 'package:myobat/app/modules/home/controllers/home_controller.dart';
 import 'package:myobat/app/utils/notification_api.dart';
+// import 'package:permission_handler/permission_handler.dart';
 
 class AddScheduleController extends GetxController {
   late TextEditingController nameController;
@@ -21,6 +22,7 @@ class AddScheduleController extends GetxController {
   @override
   void onInit() {
     super.onInit();
+    NotificationController.init();
     NotificationApi.init();
 
     nameController = TextEditingController();
@@ -37,7 +39,7 @@ class AddScheduleController extends GetxController {
     super.onClose();
   }
 
-  void add(String name, int frequency) async {
+  void add(String name, int frequency, List<TextEditingController> timeController) async {
     await db.insertMedicine(Medicine(name: name, frequency: frequency));
 
     var lastMedicineId = await db.getLastMedicineId();

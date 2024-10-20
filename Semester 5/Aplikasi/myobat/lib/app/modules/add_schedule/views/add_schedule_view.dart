@@ -123,33 +123,14 @@ class AddScheduleView extends GetView<AddScheduleController> {
                     ),
                     child: const Text('Tambah'),
                     onPressed: () {
-                    if (_formKey.currentState!.validate()) {
-                      // Add the schedule using the controller logic
-                      controller.add(controller.nameController.text,
-                          int.parse(controller.frequencyController.text));
-
-                      // Loop over each time controller to schedule notifications
-                      for (int i = 0; i < controller.timeController.length; i++) {
-                        final timeText = controller.timeController[i].text;
-                        if (timeText.isNotEmpty) {
-                          // Parse the time string (format: HH:mm)
-                          final timeParts = timeText.split(':');
-                          final hour = int.parse(timeParts[0]);
-                          final minute = int.parse(timeParts[1]);
-
-                          // Schedule the notification
-                          final timeOfDay = TimeOfDay(hour: hour, minute: minute);
-                          NotificationApi.scheduledNotification(
-                            id: i + 1, // Use a unique ID for each notification
-                            title: 'Pengingat Makan Obat',
-                            body: 'Saatnya minum obat ke-${i + 1} (${controller.nameController.text})',
-                            payload: 'Notification for ${controller.nameController.text}',
-                            scheduledDate: timeOfDay,
-                          );
-                        }
+                      if (_formKey.currentState!.validate()) {
+                        controller.add(
+                            controller.nameController.text,
+                            controller.frequency.value,
+                            controller.timeController);
+                        Get.back();
                       }
-                    }
-                  },  // Add the schedule using the controller logic
+                  },
                 )
               ),
             ],

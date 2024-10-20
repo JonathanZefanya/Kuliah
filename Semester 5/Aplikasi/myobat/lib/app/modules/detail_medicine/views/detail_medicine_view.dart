@@ -93,7 +93,6 @@ class DetailMedicineView extends GetView<DetailMedicineController> {
                 ),
                 onPressed: () {
                   controller.deleteMedicine(Get.arguments);
-
                   NotificationApi.showNotification(
                     id: 99, // A unique ID for this notification
                     title: 'Kamu Hebat!',

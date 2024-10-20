@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:get/get.dart';
 import 'package:timezone/timezone.dart' as tz;
+import 'package:permission_handler/permission_handler.dart';
 
 class NotificationApi {
   static final _notification = FlutterLocalNotificationsPlugin();
@@ -72,7 +74,7 @@ class NotificationApi {
     print("enter scheduledNotification");
     await _notification.zonedSchedule(
       id,
-      title,
+      title,  
       body,
       _scheduledDaily(scheduledDate),
       const NotificationDetails(
@@ -107,4 +109,27 @@ class NotificationApi {
         ? scheduledDate.add(const Duration(days: 1))
         : scheduledDate;
   }
+}
+
+class NotificationController extends GetxController {
+  @override
+  void onInit() {
+    super.onInit();
+    _requestNotificationPermission();
+  }
+
+  Future<void> _requestNotificationPermission() async {
+    if (await Permission.notification.isDenied) {
+      await Permission.notification.request();
+    }
+
+    if (await Permission.notification.isGranted) {
+      print("Notification permission granted");
+    } else {
+      print("Notification permission denied");
+      // Show a dialog or message to inform the user
+    }
+  }
+
+  static void init() {}
 }
