@@ -24,13 +24,38 @@ dependencies:
   palette_generator: ^0.3.3+3
   uuid: ^4.4.0
   google_fonts: ^6.2.0
+  flutter_svg: ^2.0.10+1
 
 dev_dependencies:
   flutter_lints: ^3.0.0
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: ^0.14.1
 
 flutter:
   uses-material-design: true
   assets:
     - assets/images/
+    - assets/images/logo.png
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  image_path_android: "assets/images/logo.png"
+  icon_size_android: 192 # min:36, max:192, default: 48
+  ios: true
+  remove_alpha_ios: true
+  image_path_ios: "assets/images/logo.png"
+  image_path: "assets/images/logo.png"
+  min_sdk_android: 21 # android min sdk min:16, default 21
+  web:
+    generate: true
+    image_path: "assets/images/logo.png"
+    background_color: "#hexcode"
+    theme_color: "#hexcode"
+  windows:
+    generate: true
+    image_path: "assets/images/logo.png"
+    icon_size: 48 # min:48, max:256, default: 48
+  macos:
+    generate: true
+    image_path: "assets/images/logo.png"

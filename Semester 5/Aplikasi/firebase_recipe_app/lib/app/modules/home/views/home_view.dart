@@ -2,7 +2,6 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'package:get/get.dart';
 import 'package:recipe_app/app/data/Food.dart';
 import 'package:recipe_app/app/routes/app_pages.dart';
@@ -96,7 +95,7 @@ class HomeView extends GetView<HomeController> {
                   },
                   icon: const Icon(
                     Icons.settings,
-                    color: Colors.red,
+                    color: Colors.green,
                   ))
             ],
           ),
@@ -133,6 +132,29 @@ class HomeView extends GetView<HomeController> {
                       );
                     }
                     if (snapshot.hasData) {
+                      if (snapshot.data!.isEmpty) {
+                        return Center(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Center(
+                              child: Image.asset(
+                                "assets/images/nahida.jpeg", // Gambar ditampilkan saat data kosong
+                                height: 150.h,
+                                width: 150.w,
+                              ),
+                              ),
+                              20.verticalSpace,
+                              const Center(
+                              child: Text(
+                                "Data Kosong Nih sayang,\nAyok tambahin resep sayang ❤",
+                                textAlign: TextAlign.center,
+                              ),
+                              ), // Teks ditampilkan saat data kosong
+                            ],
+                          ),
+                        );
+                      }
                       return GridView.builder(
                         shrinkWrap: true,
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -206,7 +228,7 @@ class HomeView extends GetView<HomeController> {
                                               ),
                                               5.horizontalSpace,
                                               Text(
-                                                "${90} Menit",
+                                                "${snapshot.data?[index].waktuPembuatan} Menit",
                                                 style: TextStyle(
                                                   fontSize:
                                                       ScreenUtil().setSp(12),
@@ -255,16 +277,16 @@ class HomeView extends GetView<HomeController> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                          Image.asset(
-                            "assets/images/nahida.jpeg",
-                            height: 150.h,
-                            width: 150.w,
-                          ),
-                          20.verticalSpace,
-                          const Text("Data Kosong Nih sayang,\nAyok tambahin resep sayang ❤"),
+                            Image.asset(
+                              "assets/images/nahida.jpeg", // Gambar ditampilkan saat data kosong
+                              height: 150.h,
+                              width: 150.w,
+                            ),
+                            20.verticalSpace,
+                            const Text("Data Kosong Nih sayang,\nAyok tambahin resep sayang ❤"), // Teks ditampilkan saat data kosong
                           ],
                         ),
-                        );
+                      );
                     }
                   }),
             ),
@@ -286,13 +308,13 @@ class HomeView extends GetView<HomeController> {
           width: 100.w,
           decoration: BoxDecoration(
             color: controller.selectedValueIndex.value == index
-                ? Colors.red
+                ? Colors.green
                 : Colors.white,
             borderRadius: BorderRadius.circular(
               ScreenUtil().setWidth(10),
             ),
             border: Border.all(
-              color: Colors.red,
+              color: Colors.green,
               width: 1.h,
             ),
           ),

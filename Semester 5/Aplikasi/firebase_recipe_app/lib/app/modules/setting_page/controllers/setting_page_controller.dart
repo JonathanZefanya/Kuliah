@@ -30,6 +30,7 @@ class SettingPageController extends GetxController {
     sarapanToggle.toggle();
     box.write("sarapan", sarapanToggle.value);
     if (sarapanToggle.value) {
+      // Jam 7 pagi WIB
       NotifictionApi.scheduledNotification(
         id: 1,
         title: "Sarapan Pagi Penuh Energi",
@@ -46,7 +47,7 @@ class SettingPageController extends GetxController {
       NotifictionApi.cancelNotification(1).then((value) => Get.snackbar(
           "Berhasil", "Pengingat sarapan berhasil dinonaktifkan",
           snackPosition: SnackPosition.BOTTOM,
-          backgroundColor: Colors.red,
+          backgroundColor: Colors.green,
           colorText: Colors.white));
     }
   }
@@ -55,6 +56,7 @@ class SettingPageController extends GetxController {
     siangToggle.toggle();
     box.write("siang", siangToggle.value);
     if (siangToggle.value) {
+      // Jam 12 siang WIB
       await NotifictionApi.scheduledNotification(
         id: 2,
         title: "Ayo Makan Siang",
@@ -71,7 +73,7 @@ class SettingPageController extends GetxController {
       NotifictionApi.cancelNotification(2).then((value) {
         Get.snackbar("Berhasil", "Pengingat makan siang berhasil dinonaktifkan",
             snackPosition: SnackPosition.BOTTOM,
-            backgroundColor: Colors.red,
+            backgroundColor: Colors.green,
             colorText: Colors.white);
       });
     }
@@ -81,6 +83,7 @@ class SettingPageController extends GetxController {
     malamToggle.toggle();
     box.write("malam", malamToggle.value);
     if (malamToggle.value) {
+      // Jam 6 malam WIB
       NotifictionApi.scheduledNotification(
         id: 3,
         title: "Yuk Dinner Sayang...",
@@ -97,7 +100,7 @@ class SettingPageController extends GetxController {
       NotifictionApi.cancelNotification(3).then((value) {
         Get.snackbar("Berhasil", "Pengingat makan malam berhasil dinonaktifkan",
             snackPosition: SnackPosition.BOTTOM,
-            backgroundColor: Colors.red,
+            backgroundColor: Colors.green,
             colorText: Colors.white);
       });
     }

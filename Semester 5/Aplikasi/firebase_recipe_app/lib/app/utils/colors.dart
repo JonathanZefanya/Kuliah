@@ -10,6 +10,6 @@ Color getColor(String jenis) {
   } else if (jenis == "Minuman") {
     return const Color(0xFF00B4D8);
   } else {
-    return Colors.red;
+    return Colors.green;
   }
 }

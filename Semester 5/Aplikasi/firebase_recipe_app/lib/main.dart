@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:recipe_app/firebase_options.dart';
+// import 'package:flutter_svg/flutter_svg.dart';
 
 import 'app/routes/app_pages.dart';
 
@@ -28,7 +29,7 @@ void main() async {
               color: Colors.black,
               fontSize: 18,
             ),
-          ), colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.red).copyWith(background: Colors.white),
+          ), colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.green).copyWith(background: Colors.white),
         ),
       ),
     ),

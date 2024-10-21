@@ -151,7 +151,7 @@ class DetailFoodView extends GetView<DetailFoodController> {
                                   borderRadius: BorderRadius.all(
                                     Radius.circular(5.r),
                                   ),
-                                  color: Colors.red),
+                                  color: Colors.green),
                               child: Text(
                                 "${snapshot.data?.jenis}",
                                 style: TextStyle(
@@ -476,7 +476,7 @@ class DetailFoodView extends GetView<DetailFoodController> {
                       "Error",
                       error.toString(),
                       snackPosition: SnackPosition.TOP,
-                      backgroundColor: Colors.red,
+                      backgroundColor: Colors.green,
                       colorText: Colors.white,
                     );
                     return Flexible(
@@ -556,7 +556,7 @@ class DetailFoodView extends GetView<DetailFoodController> {
                 "Dihapus",
                 "Data berhasil dihapus",
                 snackPosition: SnackPosition.BOTTOM,
-                backgroundColor: Colors.red,
+                backgroundColor: Colors.green,
                 colorText: Colors.white,
                 margin: const EdgeInsets.all(10),
               );

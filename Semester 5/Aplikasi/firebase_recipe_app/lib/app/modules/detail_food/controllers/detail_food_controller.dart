@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 
 class DetailFoodController extends GetxController with StateMixin {
   CollectionReference ref = FirebaseFirestore.instance.collection('Food');
-  Color dominantColor = Colors.red;
+  Color dominantColor = Colors.green;
   var food = Get.arguments as Food;
 
   Stream<Food> getFood(String id) {

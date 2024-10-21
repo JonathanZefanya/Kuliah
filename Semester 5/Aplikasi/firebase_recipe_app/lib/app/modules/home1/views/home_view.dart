@@ -147,7 +147,7 @@ class HomeView extends GetView<HomeController> {
                           ),
                           child: const Icon(
                             Icons.favorite,
-                            color: Colors.red,
+                            color: Colors.green,
                           ),
                         )),
                     Positioned(
