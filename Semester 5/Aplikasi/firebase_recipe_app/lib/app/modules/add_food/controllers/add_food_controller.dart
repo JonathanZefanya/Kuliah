@@ -84,9 +84,9 @@ class AddFoodController extends GetxController {
               topRight: Radius.circular(20),
             ),
           ),
-          child: Row(
+          child: const Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: const [
+            children: [
               CircularProgressIndicator(),
               Text("Loading"),
             ],

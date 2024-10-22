@@ -11,6 +11,8 @@ import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
   const HomeView({Key? key}) : super(key: key);
+  // NotificationService notificationService = NotificationService();
+
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +32,6 @@ class HomeView extends GetView<HomeController> {
           flexibleSpace: SafeArea(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              //search bar
               children: [
                 Image.asset("assets/images/food.jpg").paddingOnly(right: 10.w),
                 Flexible(
@@ -78,221 +79,225 @@ class HomeView extends GetView<HomeController> {
         },
         child: const Icon(Icons.add),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          20.verticalSpace,
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      body: LayoutBuilder(
+        builder: (context, constraints) {
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Text("Katalog Resep Makanan",
-                  style:
-                      TextStyle(fontSize: 20.sp, fontWeight: FontWeight.w500)),
-              IconButton(
-                  onPressed: () {
-                    Get.toNamed(Routes.SETTING_PAGE);
-                  },
-                  icon: const Icon(
-                    Icons.settings,
-                    color: Colors.green,
-                  ))
-            ],
-          ),
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              children: [
-                ...List.generate(
-                  controller.buttonText.length,
-                  (index) => button(
-                    index: index,
-                    text: controller.buttonText[index],
-                    image: controller.iconButton[index],
-                  ).paddingOnly(right: 10.w),
-                )
-              ],
-            ).paddingSymmetric(vertical: 10.h),
-          ),
-          10.verticalSpace,
-          Flexible(
-            child: Obx(
-              () => StreamBuilder<List<Food>>(
-                  stream: controller.readRecipe(controller
-                      .buttonText[controller.selectedValueIndex.value]),
-                  builder: (context, snapshot) {
-                    if (snapshot.connectionState == ConnectionState.waiting) {
-                      return const Center(
-                        child: CircularProgressIndicator(),
-                      );
-                    }
-                    if (snapshot.hasError) {
-                      return const Center(
-                        child: Text("Error"),
-                      );
-                    }
-                    if (snapshot.hasData) {
-                      if (snapshot.data!.isEmpty) {
-                        return Center(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Center(
-                              child: Image.asset(
-                                "assets/images/nahida.jpeg", // Gambar ditampilkan saat data kosong
-                                height: 150.h,
-                                width: 150.w,
-                              ),
-                              ),
-                              20.verticalSpace,
-                              const Center(
-                              child: Text(
-                                "Data Kosong Nih sayang,\nAyok tambahin resep sayang ❤",
-                                textAlign: TextAlign.center,
-                              ),
-                              ), // Teks ditampilkan saat data kosong
-                            ],
-                          ),
-                        );
-                      }
-                      return GridView.builder(
-                        shrinkWrap: true,
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          mainAxisSpacing: 10.h,
-                          crossAxisSpacing: 10.h,
-                          crossAxisCount: 2,
-                          childAspectRatio: 0.95,
-                        ),
-                        itemBuilder: (_, index) => GestureDetector(
-                          onTap: () {
-                            Get.toNamed(Routes.DETAIL_FOOD,
-                                arguments: snapshot.data![index]);
-                          },
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(
-                                ScreenUtil().setWidth(10),
-                              ),
-                              border: Border.all(
-                                color: Colors.grey[300]!,
-                                width: 1.h,
-                              ),
-                            ),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                ClipRRect(
-                                  borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(
-                                      ScreenUtil().setWidth(10),
-                                    ),
-                                    topRight: Radius.circular(
-                                      ScreenUtil().setWidth(10),
-                                    ),
+              20.verticalSpace,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("Katalog Resep Makanan",
+                      style:
+                          TextStyle(fontSize: 20.sp, fontWeight: FontWeight.w500)),
+                  IconButton(
+                      onPressed: () {
+                        Get.toNamed(Routes.SETTING_PAGE);
+                      },
+                      icon: const Icon(
+                        Icons.settings,
+                        color: Colors.green,
+                      ))
+                ],
+              ),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    ...List.generate(
+                      controller.buttonText.length,
+                      (index) => button(
+                        index: index,
+                        text: controller.buttonText[index],
+                        image: controller.iconButton[index],
+                      ).paddingOnly(right: 10.w),
+                    )
+                  ],
+                ).paddingSymmetric(vertical: 10.h),
+              ),
+              10.verticalSpace,
+              Flexible(
+                child: Obx(
+                  () => StreamBuilder<List<Food>>(
+                      stream: controller.readRecipe(controller
+                          .buttonText[controller.selectedValueIndex.value]),
+                      builder: (context, snapshot) {
+                        if (snapshot.connectionState == ConnectionState.waiting) {
+                          return const Center(
+                            child: CircularProgressIndicator(),
+                          );
+                        }
+                        if (snapshot.hasError) {
+                          return const Center(
+                            child: Text("Error"),
+                          );
+                        }
+                        if (snapshot.hasData) {
+                          if (snapshot.data!.isEmpty) {
+                            return Center(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Center(
+                                  child: Image.asset(
+                                    "assets/images/nahida.jpeg", // Gambar ditampilkan saat data kosong
+                                    height: 150.h,
+                                    width: 150.w,
                                   ),
-                                  child: CachedNetworkImage(
-                                    imageUrl:
-                                        snapshot.data?[index].images ?? "",
-                                    height: 100.h,
-                                    width: 200.w,
-                                    fit: BoxFit.cover,
-                                    errorWidget: (context, url, error) =>
-                                        const Icon(Icons.error),
+                                  ),
+                                  20.verticalSpace,
+                                  const Center(
+                                  child: Text(
+                                    "Data Kosong Nih sayang,\nAyok tambahin resep sayang ❤",
+                                    textAlign: TextAlign.center,
+                                  ),
+                                  ), // Teks ditampilkan saat data kosong
+                                ],
+                              ),
+                            );
+                          }
+                          return GridView.builder(
+                            shrinkWrap: true,
+                            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                              mainAxisSpacing: 10.h,
+                              crossAxisSpacing: 10.h,
+                              crossAxisCount: constraints.maxWidth > 600 ? 3 : 2,
+                              childAspectRatio: 0.95,
+                            ),
+                            itemBuilder: (_, index) => GestureDetector(
+                              onTap: () {
+                                Get.toNamed(Routes.DETAIL_FOOD,
+                                    arguments: snapshot.data![index]);
+                              },
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(
+                                    ScreenUtil().setWidth(10),
+                                  ),
+                                  border: Border.all(
+                                    color: Colors.grey[300]!,
+                                    width: 1.h,
                                   ),
                                 ),
-                                Flexible(
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      Text(
-                                        snapshot.data?[index].nama ?? "",
-                                        style: const TextStyle(
-                                          fontWeight: FontWeight.bold,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    ClipRRect(
+                                      borderRadius: BorderRadius.only(
+                                        topLeft: Radius.circular(
+                                          ScreenUtil().setWidth(10),
+                                        ),
+                                        topRight: Radius.circular(
+                                          ScreenUtil().setWidth(10),
                                         ),
                                       ),
-                                      const Spacer(),
-                                      Row(
+                                      child: CachedNetworkImage(
+                                        imageUrl:
+                                            snapshot.data?[index].images ?? "",
+                                        height: 100.h,
+                                        width: 200.w,
+                                        fit: BoxFit.cover,
+                                        errorWidget: (context, url, error) =>
+                                            const Icon(Icons.error),
+                                      ),
+                                    ),
+                                    Flexible(
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
+                                            MainAxisAlignment.spaceEvenly,
+                                        mainAxisSize: MainAxisSize.min,
                                         children: [
+                                          Text(
+                                            snapshot.data?[index].nama ?? "",
+                                            style: const TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                          const Spacer(),
                                           Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
                                             children: [
-                                              Icon(
-                                                Icons.alarm,
-                                                color: Colors.grey[600],
+                                              Row(
+                                                children: [
+                                                  Icon(
+                                                    Icons.alarm,
+                                                    color: Colors.grey[600],
+                                                  ),
+                                                  5.horizontalSpace,
+                                                  Text(
+                                                    "${snapshot.data?[index].waktuPembuatan} Menit",
+                                                    style: TextStyle(
+                                                      fontSize:
+                                                          ScreenUtil().setSp(12),
+                                                      fontWeight: FontWeight.w500,
+                                                      color: Colors.grey[600],
+                                                    ),
+                                                  ),
+                                                ],
                                               ),
-                                              5.horizontalSpace,
-                                              Text(
-                                                "${snapshot.data?[index].waktuPembuatan} Menit",
-                                                style: TextStyle(
-                                                  fontSize:
-                                                      ScreenUtil().setSp(12),
-                                                  fontWeight: FontWeight.w500,
-                                                  color: Colors.grey[600],
+                                              Container(
+                                                padding: EdgeInsets.symmetric(
+                                                  horizontal: 5.r,
+                                                  vertical: 5.r,
+                                                ),
+                                                height: 20.h,
+                                                decoration: BoxDecoration(
+                                                    borderRadius: BorderRadius.all(
+                                                      Radius.circular(5.r),
+                                                    ),
+                                                    color: getColor(snapshot
+                                                            .data?[index].jenis ??
+                                                        "")),
+                                                child: Text(
+                                                  "${snapshot.data?[index].jenis}",
+                                                  style: TextStyle(
+                                                    fontSize: 9.sp,
+                                                    color: Colors.white,
+                                                  ),
                                                 ),
                                               ),
                                             ],
                                           ),
-                                          Container(
-                                            padding: EdgeInsets.symmetric(
-                                              horizontal: 5.r,
-                                              vertical: 5.r,
-                                            ),
-                                            height: 20.h,
-                                            decoration: BoxDecoration(
-                                                borderRadius: BorderRadius.all(
-                                                  Radius.circular(5.r),
-                                                ),
-                                                color: getColor(snapshot
-                                                        .data?[index].jenis ??
-                                                    "")),
-                                            child: Text(
-                                              "${snapshot.data?[index].jenis}",
-                                              style: TextStyle(
-                                                fontSize: 9.sp,
-                                                color: Colors.white,
-                                              ),
-                                            ),
-                                          ),
+                                          15.verticalSpace,
                                         ],
-                                      ),
-                                      15.verticalSpace,
-                                    ],
-                                  ).paddingOnly(
-                                      top: 10.h, left: 10.w, right: 10.w),
+                                      ).paddingOnly(
+                                          top: 10.h, left: 10.w, right: 10.w),
+                                    ),
+                                  ],
                                 ),
+                              ),
+                            ),
+                            itemCount: snapshot.data?.length,
+                          );
+                        } else {
+                            return Center(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image.asset(
+                                  "assets/images/nahida.jpeg", // Gambar ditampilkan saat data kosong
+                                  height: 150.h,
+                                  width: 150.w,
+                                ),
+                                20.verticalSpace,
+                                const Text("Data Kosong Nih sayang,\nAyok tambahin resep sayang ❤"), // Teks ditampilkan saat data kosong
                               ],
                             ),
-                          ),
-                        ),
-                        itemCount: snapshot.data?.length,
-                      );
-                    } else {
-                        return Center(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Image.asset(
-                              "assets/images/nahida.jpeg", // Gambar ditampilkan saat data kosong
-                              height: 150.h,
-                              width: 150.w,
-                            ),
-                            20.verticalSpace,
-                            const Text("Data Kosong Nih sayang,\nAyok tambahin resep sayang ❤"), // Teks ditampilkan saat data kosong
-                          ],
-                        ),
-                      );
-                    }
-                  }),
-            ),
-          )
-        ],
-      ).paddingOnly(left: 20.w, right: 20.w, bottom: 20.h),
+                          );
+                        }
+                      }),
+                ),
+              )
+            ],
+          ).paddingOnly(left: 20.w, right: 20.w, bottom: 20.h);
+        },
+      ),
     );
   }
 

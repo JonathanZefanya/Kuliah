@@ -2,15 +2,30 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:recipe_app/app/routes/app_pages.dart';
+import 'package:recipe_app/app/utils/notification_services.dart';
 
-import '../controllers/splash_controller.dart';
+class SplashView extends StatefulWidget {
+  const SplashView({super.key});
 
-class SplashView extends GetView<SplashController> {
-  const SplashView({Key? key}) : super(key: key);
+  @override
+  _SplashViewState createState() => _SplashViewState();
+}
+
+class _SplashViewState extends State<SplashView> {
+  final NotificationService notificationService = NotificationService();
+
+  @override
+  void initState() {
+    super.initState();
+    notificationService.requestNotificationPermission();
+    notificationService.firebaseInit();
+    notificationService.getFirebaseToken().then((value){
+      print('Device Token: $value');
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-    // Getting screen dimensions
     var screenHeight = MediaQuery.of(context).size.height;
     var screenWidth = MediaQuery.of(context).size.width;
 
@@ -82,7 +97,7 @@ class SplashView extends GetView<SplashController> {
               'Easy to cook and delicious to eat!',
               style: TextStyle(fontSize: 18),
             ),
-            Spacer(), // Push the button to the bottom of the screen
+            const Spacer(), // Push the button to the bottom of the screen
             GestureDetector(
               onTap: () {
                 Get.offAllNamed(Routes.HOME);

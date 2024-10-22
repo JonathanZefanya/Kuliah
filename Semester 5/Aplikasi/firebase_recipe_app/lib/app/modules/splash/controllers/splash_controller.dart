@@ -1,4 +1,4 @@
-import 'package:get/get.dart';
+import 'package:get/get.dart';  
 
 class SplashController extends GetxController {
   //TODO: Implement SplashController

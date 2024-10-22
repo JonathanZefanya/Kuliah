@@ -45,34 +45,34 @@ class NotificationHelper {
   }
 
   /// Scheduled Notification
-  scheduledNotification({
-    required int hour,
-    required int minutes,
-    required int id,
-    required String sound,
-  }) async {
-    await flutterLocalNotificationsPlugin.zonedSchedule(
-      id,
-      'It\'s time to drink water!',
-      'After drinking, touch the cup to confirm',
-      _convertTime(hour, minutes),
-      NotificationDetails(
-        android: AndroidNotificationDetails(
-          'your channel id $sound',
-          'your channel name',
-          channelDescription: 'your channel description',
-          importance: Importance.max,
-          priority: Priority.high,
-          sound: RawResourceAndroidNotificationSound(sound),
-        ),
+ scheduledNotification({
+  required int hour,
+  required int minutes,
+  required int id,
+  required String sound,
+}) async {
+  await flutterLocalNotificationsPlugin.zonedSchedule(
+    id,
+    'It\'s time to drink water!',
+    'After drinking, touch the cup to confirm',
+    _convertTime(hour, minutes),
+    const NotificationDetails(
+      android: AndroidNotificationDetails(
+        'your channel id',
+        'your channel name',
+        channelDescription: 'your channel description',
+        importance: Importance.max,
+        priority: Priority.high,
+        sound: RawResourceAndroidNotificationSound('notification_sound'), // Add sound here
       ),
-      androidAllowWhileIdle: true,
-      uiLocalNotificationDateInterpretation:
-      UILocalNotificationDateInterpretation.absoluteTime,
-      matchDateTimeComponents: DateTimeComponents.time,
-      payload: 'It could be anything you pass',
-    );
-  }
+    ),
+    androidAllowWhileIdle: true,
+    uiLocalNotificationDateInterpretation:
+    UILocalNotificationDateInterpretation.absoluteTime,
+    matchDateTimeComponents: DateTimeComponents.time,
+    payload: 'It could be anything you pass',
+  );
+}
 
   /// Request IOS permissions
   void requestIOSPermissions() {
@@ -83,6 +83,22 @@ class NotificationHelper {
       alert: true,
       badge: true,
       sound: true,
+    );
+  }
+
+  void requestAndroidPermissions() {
+    flutterLocalNotificationsPlugin
+        .resolvePlatformSpecificImplementation<
+        AndroidFlutterLocalNotificationsPlugin>()
+        ?.createNotificationChannel(
+      const AndroidNotificationChannel(
+        'your channel id',
+        'your channel name',
+        description: 'your channel description',
+        importance: Importance.max,
+        playSound: true,
+        enableVibration: true,
+      ),
     );
   }
 
