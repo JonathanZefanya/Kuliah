@@ -6,7 +6,8 @@ import 'package:recipe_app/app/utils/notification_api.dart';
 class SettingPageController extends GetxController {
   final sarapanTime = const TimeOfDay(hour: 7, minute: 0).obs;
   final siangTime = const TimeOfDay(hour: 12, minute: 0).obs;
-  final malamTime = const TimeOfDay(hour: 23, minute: 25).obs;
+  final malamTime = const TimeOfDay(hour: 18, minute: 0).obs;
+  
 
   GetStorage box = GetStorage();
 
@@ -19,7 +20,6 @@ class SettingPageController extends GetxController {
       print("Error initializing notifications: $e");
     }
 
-    // Auto-schedule notifications without user input
     await _scheduleNotifications();
   }
 

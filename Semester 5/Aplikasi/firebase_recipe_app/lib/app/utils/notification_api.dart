@@ -31,6 +31,21 @@ class NotificationApi {
         print('Notification payload: $payload');
       },
     );
+
+    // Daftarkan channel untuk suara kustom
+    const AndroidNotificationChannel channel = AndroidNotificationChannel(
+      'alarm_channel_id', // ID unik untuk channel
+      'Alarm Notifications', // Nama channel
+      description: 'This channel is used for alarm notifications.',
+      importance: Importance.max,
+      sound: RawResourceAndroidNotificationSound('notification_sound'), // Nama file tanpa ekstensi
+      playSound: true,
+    );
+
+    await _notification
+        .resolvePlatformSpecificImplementation<
+            AndroidFlutterLocalNotificationsPlugin>()
+        ?.createNotificationChannel(channel);
   }
 
   // Callback when a notification is selected
@@ -59,6 +74,8 @@ class NotificationApi {
             importance: Importance.max,
             priority: Priority.high,
             showWhen: false,
+            playSound: true,
+            sound: RawResourceAndroidNotificationSound('notification_sound'), // Add custom sound
           ),
         ),
         payload: payload,
@@ -71,20 +88,20 @@ class NotificationApi {
     required String payload,
     required TimeOfDay scheduledTime,
   }) async {
-    print("enter scheduledNotification");
     await _notification.zonedSchedule(
       id,
-      title,  
+      title,
       body,
       _scheduledDaily(scheduledTime),
       const NotificationDetails(
         android: AndroidNotificationDetails(
-          'channel id',
-          'channel name',
-          channelDescription: 'channel description',
+          'alarm_channel_id', // Pastikan ID channel sesuai
+          'Alarm Notifications',
+          channelDescription: 'This channel is used for alarm notifications.',
           importance: Importance.max,
           priority: Priority.high,
-          showWhen: true,
+          playSound: true,
+          sound: RawResourceAndroidNotificationSound('notification_sound'), // Nama file suara tanpa ekstensi
         ),
       ),
       androidAllowWhileIdle: true,
@@ -93,17 +110,14 @@ class NotificationApi {
       payload: payload,
       matchDateTimeComponents: DateTimeComponents.time,
     );
-    print("finished scheduledNotification");
   }
 
   static tz.TZDateTime _scheduledDaily(TimeOfDay time) {
-    print("enter _scheduledDaily");
     final jakarta = tz.getLocation('Asia/Jakarta');
     tz.setLocalLocation(jakarta);
     final now = tz.TZDateTime.now(jakarta);
     tz.TZDateTime scheduledDate = tz.TZDateTime(
         tz.local, now.year, now.month, now.day, time.hour, time.minute, 0);
-    print("before return _scheduledDaily");
 
     return scheduledDate.isBefore(now)
         ? scheduledDate.add(const Duration(days: 1))
