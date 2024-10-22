@@ -39,6 +39,14 @@ class SettingPageView extends GetView<SettingPageController> {
                 icon: Icons.dinner_dining,
                 time: controller.malamTime,
               ),
+              SizedBox(height: 20.h),
+              _buildHeader('Profile Developer'),
+              SizedBox(height: 20.h),
+              _buildProfileCard(
+                title: "Nama",
+                icon: Icons.person,
+                description: "Jonathan Natannael Zefanya",
+              ),
             ],
           ),
         ),
@@ -76,5 +84,30 @@ class SettingPageView extends GetView<SettingPageController> {
             ),
           ),
         ));
+  }
+
+  Widget _buildProfileCard({
+    required String title,
+    required IconData icon,
+    required String description,
+  }) {
+    return Card(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.r)),
+      elevation: 5,
+      child: Padding(
+        padding: EdgeInsets.symmetric(vertical: 10.h),
+        child: ListTile(
+          leading: Icon(icon, color: Colors.blueAccent, size: 30.sp),
+          title: Text(
+            title,
+            style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w500),
+          ),
+          subtitle: Text(
+            description,
+            style: TextStyle(fontSize: 14.sp),
+          ),
+        ),
+      ),
+    );
   }
 }
