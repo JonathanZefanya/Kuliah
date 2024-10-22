@@ -36,8 +36,8 @@ void main() async {
   // test notification
   NotificationApi.showNotification(
     id: 999,
-    title: 'Test Notification',
-    body: 'This is a test notification',
+    title: 'Hallo Sayang',
+    body: 'Selamat datang di aplikasi ini',
     payload: 'Test Payload',
   );
 
