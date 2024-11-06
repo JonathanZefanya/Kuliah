@@ -39,8 +39,8 @@ class HomeController extends GetxController {
   Stream<QuerySnapshot<Object?>> streamFilteredData(String query) {
     CollectionReference postsRef = firestore.collection('posts');
     return postsRef
-        .where('title', isGreaterThanOrEqualTo: query)
-        .where('title', isLessThanOrEqualTo: query + '\uf8ff')
+        .where('title', isGreaterThanOrEqualTo: query.toLowerCase())
+        .where('title', isLessThanOrEqualTo: query.toLowerCase() + '\uf8ff')
         .snapshots();
   }
 

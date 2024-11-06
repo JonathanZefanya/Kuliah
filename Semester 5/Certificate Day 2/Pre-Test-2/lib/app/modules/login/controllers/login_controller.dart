@@ -22,17 +22,45 @@ class LoginController extends GetxController {
           'Success',
           'User logged in successfully',
           snackPosition: SnackPosition.BOTTOM,
-          duration: Duration(seconds: 2),
-          margin: EdgeInsets.all(12),
+          duration: const Duration(seconds: 2),
+          margin: const EdgeInsets.all(12),
         );
         Get.offAllNamed(Routes.HOME);
+      } else if (userCredential.user!.emailVerified == false) {
+        Get.snackbar(
+          'Error',
+          'Please verify your email',
+          snackPosition: SnackPosition.BOTTOM,
+          duration: const Duration(seconds: 2),
+          margin: const EdgeInsets.all(12),
+        );
+      } else if (userCredential.user!.emailVerified &&
+        userCredential.user!.email != email) {
+        Get.defaultDialog(
+          title: 'Error',
+          middleText: 'Wrong email provided for that user.',
+          textConfirm: 'OK',
+          onConfirm: () {
+            Get.back();
+          },
+        );
+      } else if (userCredential.user!.emailVerified &&
+          userCredential.user!.email == email) {
+        Get.defaultDialog(
+          title: 'Error',
+          middleText: 'Wrong password provided for that user.',
+          textConfirm: 'OK',
+          onConfirm: () {
+        Get.back();
+          },
+        );
       } else {
         Get.snackbar(
           'Error',
           'Please verify your email',
           snackPosition: SnackPosition.BOTTOM,
-          duration: Duration(seconds: 2),
-          margin: EdgeInsets.all(12),
+          duration: const Duration(seconds: 2),
+          margin: const EdgeInsets.all(12),
         );
       }
     } on FirebaseAuthException catch (e) {
@@ -42,8 +70,8 @@ class LoginController extends GetxController {
           'Error',
           'No user found for that email.',
           snackPosition: SnackPosition.BOTTOM,
-          duration: Duration(seconds: 2),
-          margin: EdgeInsets.all(12),
+          duration: const Duration(seconds: 2),
+          margin: const EdgeInsets.all(12),
         );
       } else if (e.code == 'wrong-password') {
         print('wrong password');
@@ -51,8 +79,8 @@ class LoginController extends GetxController {
           'Error',
           'Wrong password provided for that user.',
           snackPosition: SnackPosition.BOTTOM,
-          duration: Duration(seconds: 2),
-          margin: EdgeInsets.all(12),
+          duration: const Duration(seconds: 2),
+          margin: const EdgeInsets.all(12),
         );
       } else if (e.code == 'too-many-requests') {
         print('too-many-requests');
@@ -60,8 +88,8 @@ class LoginController extends GetxController {
           'Error',
           'Too many requests. Try again later.',
           snackPosition: SnackPosition.BOTTOM,
-          duration: Duration(seconds: 2),
-          margin: EdgeInsets.all(12),
+          duration: const Duration(seconds: 2),
+          margin: const EdgeInsets.all(12),
         );
       }
       print(e.code);

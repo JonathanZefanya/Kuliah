@@ -6,7 +6,7 @@ class LoginView extends GetView<LoginController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF3D2A91),
+      backgroundColor: const Color(0xFF3D2A91),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 24.0),
         child: ListView(
@@ -20,7 +20,7 @@ class LoginView extends GetView<LoginController> {
                   fontSize: 36,
                   fontWeight: FontWeight.bold,
                   foreground: Paint()
-                    ..shader = LinearGradient(
+                    ..shader = const LinearGradient(
                       colors: <Color>[Colors.pinkAccent, Colors.blueAccent],
                     ).createShader(const Rect.fromLTWH(0.0, 0.0, 200.0, 70.0)),
                 ),
@@ -78,7 +78,7 @@ class LoginView extends GetView<LoginController> {
                 boxShadow: [
                   BoxShadow(
                     color: Colors.black.withOpacity(0.3),
-                    offset: Offset(0, 4),
+                    offset: const Offset(0, 4),
                     blurRadius: 8,
                   ),
                 ],
@@ -87,7 +87,7 @@ class LoginView extends GetView<LoginController> {
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(vertical: 16),
                   backgroundColor: Colors.white,
-                  foregroundColor: Color(0xFF3D2A91),
+                  foregroundColor: const Color(0xFF3D2A91),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8.0),
                   ),
@@ -95,9 +95,9 @@ class LoginView extends GetView<LoginController> {
                 onPressed: () => controller.login(
                     controller.emailController.text,
                     controller.passwordController.text),
-                child: Row(
+                child: const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
+                  children: [
                     Text('Login', style: TextStyle(fontSize: 18)),
                     SizedBox(width: 8),
                     Icon(Icons.arrow_forward),
@@ -149,10 +149,10 @@ class LoginView extends GetView<LoginController> {
       decoration: InputDecoration(
         labelText: label,
         labelStyle: const TextStyle(color: Colors.white70),
-        enabledBorder: UnderlineInputBorder(
+        enabledBorder: const UnderlineInputBorder(
           borderSide: BorderSide(color: Colors.white70),
         ),
-        focusedBorder: UnderlineInputBorder(
+        focusedBorder: const UnderlineInputBorder(
           borderSide: BorderSide(color: Colors.white),
         ),
         suffixIcon: suffixIcon,

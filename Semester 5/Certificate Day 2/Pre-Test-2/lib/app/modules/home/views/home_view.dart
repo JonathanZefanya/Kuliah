@@ -31,7 +31,7 @@ class HomeView extends GetView<HomeController> {
                   controller.searchQuery.value = query;
                 },
                 decoration: InputDecoration(
-                  hintText: 'Search posts...',
+                  hintText: 'Search title posts...',
                   prefixIcon: Icon(Icons.search),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(16),

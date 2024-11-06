@@ -34,12 +34,22 @@ class RegisterController extends GetxController {
         password: password,
       );
 
-      // Save the username in Firestore
       String uid = userCredential.user!.uid;
       await firestore.collection('users').doc(uid).set({
         'username': username,
         'email': email,
       });
+
+      if (username == username) {
+        Get.snackbar(
+          'Error',
+          'Username already exists!',
+          snackPosition: SnackPosition.BOTTOM,
+          duration: Duration(seconds: 2),
+          margin: EdgeInsets.all(12),
+        );
+        return;
+      }
 
       await userCredential.user!.sendEmailVerification();
 

@@ -36,11 +36,11 @@ flutter_launcher_icons:
   ios: true
   image_path: "assets/nahida.jpeg"
 
-flutter_native_splash:
-  color: "#f3f3f3" 
-  background_image: assets/background.jpg 
-  image: assets/nahida.jpeg
-  android: true 
-  ios: true 
-  web: true
-  fullscreen: true 
+# flutter_native_splash:
+#   color: "#f3f3f3" 
+#   background_image: assets/background.jpg 
+#   image: assets/nahida.jpeg
+#   android: true 
+#   ios: true 
+#   web: true
+#   fullscreen: true 
