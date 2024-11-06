@@ -5,10 +5,9 @@ import 'package:recipe_app/app/utils/notification_api.dart';
 
 class SettingPageController extends GetxController {
   final sarapanTime = const TimeOfDay(hour: 7, minute: 0).obs;
-  final siangTime = const TimeOfDay(hour: 12, minute: 0).obs;
+  final siangTime = const TimeOfDay(hour: 14, minute: 0).obs;
   final malamTime = const TimeOfDay(hour: 18, minute: 0).obs;
   
-
   GetStorage box = GetStorage();
 
   @override

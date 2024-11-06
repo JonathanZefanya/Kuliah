@@ -1,0 +1,46 @@
+name: firebase_application
+version: 1.0.0+1
+publish_to: none
+description: A new Flutter project.
+environment: 
+  sdk: '>=2.17.6 <3.0.0'
+
+dependencies: 
+  cupertino_icons: ^1.0.2
+  get_cli: ^1.8.1
+  firebase_core: ^3.6.0
+  firebase_auth: ^5.3.1
+  cloud_firestore: ^5.4.4
+  flutter_native_splash: ^2.4.2
+  flutter: 
+    sdk: flutter
+  get: ^4.6.6
+  flutter_launcher_icons: ^0.14.1
+  firebase_storage: ^12.3.4
+  image_picker: ^1.1.2
+
+dev_dependencies: 
+  flutter_lints: ^2.0.0
+  flutter_test: 
+    sdk: flutter
+
+flutter: 
+  uses-material-design: true
+
+  assets:
+    - assets/
+    - assets/nahida.jpeg
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/nahida.jpeg"
+
+flutter_native_splash:
+  color: "#f3f3f3" 
+  background_image: assets/background.jpg 
+  image: assets/nahida.jpeg
+  android: true 
+  ios: true 
+  web: true
+  fullscreen: true 

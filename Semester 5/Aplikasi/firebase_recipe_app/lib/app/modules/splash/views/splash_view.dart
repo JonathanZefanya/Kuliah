@@ -19,7 +19,7 @@ class _SplashViewState extends State<SplashView> {
     super.initState();
     notificationService.requestNotificationPermission();
     notificationService.firebaseInit();
-    notificationService.getFirebaseToken().then((value){
+    notificationService.getFirebaseToken().then((value) {
       print('Device Token: $value');
     });
   }
@@ -31,25 +31,29 @@ class _SplashViewState extends State<SplashView> {
 
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.all(screenWidth * 0.06), // Responsive padding
+        padding: EdgeInsets.all(screenWidth * 0.06), 
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             SizedBox(
-              height: screenHeight * 0.15, // Responsive spacing at the top
+              height: screenHeight * 0.15, 
             ),
             Center(
               child: Container(
-                height: screenHeight * 0.4, // Responsive image height
-                width: screenWidth * 0.8,   // Responsive image width
+                height: screenHeight * 0.4,
+                width: screenWidth * 0.8,   
                 decoration: BoxDecoration(
-                  border: Border.all(
-                    color: Colors.grey,
-                    width: 0.8,
-                  ),
+                  borderRadius: BorderRadius.circular(16),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.1),
+                      blurRadius: 10,
+                      offset: Offset(0, 5),
+                    )
+                  ],
                   image: const DecorationImage(
-                    image: AssetImage('assets/images/bg_splash.png'),
+                    image: AssetImage('assets/images/text_bg_splash.jpg'),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -59,29 +63,22 @@ class _SplashViewState extends State<SplashView> {
               height: screenHeight * 0.05, // Responsive spacing
             ),
             Text(
-              'Discover Our',
+              'Selamat Datang',
               style: GoogleFonts.playfairDisplay(
                 fontSize: screenWidth * 0.1, // Responsive font size
+                fontWeight: FontWeight.bold,
+                color: Colors.black87,
               ),
             ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(
-                  width: screenWidth * 0.3,  // Responsive width for the image
-                  height: screenHeight * 0.05, // Responsive height for the image
-                  child: Image.asset(
-                    'assets/images/text_bg_splash.jpg',
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                SizedBox(
-                  width: screenWidth * 0.03, // Responsive spacing between elements
-                ),
                 Text(
-                  'Food World!',
+                  'Di Recipe App!',
                   style: GoogleFonts.playfairDisplay(
                     fontSize: screenWidth * 0.1, // Responsive font size
+                    fontWeight: FontWeight.bold,
+                    color: Colors.green, // Highlight text with a modern color
                   ),
                 ),
               ],
@@ -90,32 +87,37 @@ class _SplashViewState extends State<SplashView> {
               height: screenHeight * 0.02, // Responsive spacing
             ),
             const Text(
-              'Find the best food for your health',
-              style: TextStyle(fontSize: 18),
+              'Langsung masak juga bisa',
+              style: TextStyle(fontSize: 18, color: Colors.grey),
             ),
             const Text(
-              'Easy to cook and delicious to eat!',
-              style: TextStyle(fontSize: 18),
+              'Mudah dan praktis',
+              style: TextStyle(fontSize: 18, color: Colors.grey),
             ),
             const Spacer(), // Push the button to the bottom of the screen
             GestureDetector(
               onTap: () {
                 Get.offAllNamed(Routes.HOME);
               },
-              child: SizedBox(
+              child: Container(
                 width: double.infinity,
-                child: Container(
-                  padding: const EdgeInsets.all(15),
-                  color: Colors.black,
-                  child: const Text(
-                    'Get Started',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
-                    textAlign: TextAlign.center,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  gradient: LinearGradient(
+                    colors: [Colors.greenAccent, Colors.teal],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
                   ),
+                ),
+                padding: const EdgeInsets.all(15),
+                child: const Text(
+                  'Get Started',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  textAlign: TextAlign.center,
                 ),
               ),
             ),

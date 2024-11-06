@@ -42,7 +42,7 @@ class UpdateController extends GetxController {
         duration: Duration(seconds: 2),
         margin: EdgeInsets.all(12),
       );
-    }
+    } 
   }
 
   @override

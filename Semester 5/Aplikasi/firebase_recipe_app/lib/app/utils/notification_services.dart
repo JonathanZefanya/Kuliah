@@ -3,14 +3,11 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 class NotificationService {
   FirebaseMessaging messaging = FirebaseMessaging.instance;
 
-  // Initialize Firebase Messaging and handle incoming foreground notifications
   void firebaseInit() {
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
       if (message.notification != null) {
         print('Message Title: ${message.notification!.title}');
         print('Message Body: ${message.notification!.body}');
-        // Optionally display the notification
-        // You can integrate local notifications to show this in foreground
       }
     });
   }
@@ -24,14 +21,12 @@ class NotificationService {
     return token!;
   }
 
-  // Handle FCM token refresh
   void isTokenRefreshed() {
     messaging.onTokenRefresh.listen((String newToken) {
       print('FCM Token refreshed: $newToken');
     });
   }
 
-  // Request notification permissions from the user
   Future<void> requestNotificationPermission() async {
     NotificationSettings settings = await messaging.requestPermission(
       alert: true,

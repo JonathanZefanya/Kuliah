@@ -48,12 +48,10 @@ class NotificationApi {
         ?.createNotificationChannel(channel);
   }
 
-  // Callback when a notification is selected
   static Future selectNotification(String? payload) async {
     if (payload != null) {
       print('Notification payload: $payload');
     }
-    // Handle the notification tap action (navigate to a specific page, etc.)
   }
 
   static Future showNotification({
