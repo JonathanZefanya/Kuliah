@@ -12,7 +12,7 @@ class UpdateController extends GetxController {
   FirebaseStorage storage = FirebaseStorage.instance;
 
   Rxn<File> imageFile = Rxn<File>();
-  RxInt selectedEmotIndex = 0.obs;
+  RxInt selectedEmotIndex = 1.obs;
 
   Future<void> pickImage() async {
     final pickedFile = await ImagePicker().pickImage(source: ImageSource.gallery);
