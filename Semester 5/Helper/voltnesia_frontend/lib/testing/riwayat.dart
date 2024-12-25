@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
+import 'homepage.dart';
 
 class RiwayatPage extends StatefulWidget {
   @override
@@ -39,7 +40,10 @@ class _RiwayatPageState extends State<RiwayatPage> {
         elevation: 0,
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: Colors.indigo.shade900),
-          onPressed: () => Navigator.pop(context),
+          onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => HomePage()),
+                  ),
         ),
       ),
       backgroundColor: Color(0xFFFF15aea2),
@@ -75,7 +79,7 @@ class _RiwayatPageState extends State<RiwayatPage> {
   Widget _buildGrafikBulanan() {
     return Card(
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(8.0),
+        borderRadius: BorderRadius.circular(35.0),
       ),
       elevation: 4,
       color: Color(0xFFfff7e8),
@@ -166,43 +170,59 @@ class _RiwayatPageState extends State<RiwayatPage> {
 
   Widget _buildRiwayatPengeluaran(
       String bulan, String periode, String penggunaan, String total) {
-    return Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(8.0),
-      ),
-      elevation: 2,
-      color: Color(0xFFfff7e8),
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'BULAN: $bulan',
-              style: TextStyle(
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 10.0), // Menambahkan padding kiri-kanan
+      width: double.infinity, // Memastikan Card memanjang selebar layar
+      child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(25.0),
+        ),
+        elevation: 2,
+        color: Color(0xFFfff7e8),
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                '$bulan',
+                style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
-                  color: Colors.indigo.shade900),
-            ),
-            SizedBox(height: 8),
-            Text(
-              'Periode pembayaran: $periode',
-              style: TextStyle(fontSize: 14, color: Colors.indigo.shade900),
-            ),
-            SizedBox(height: 8),
-            Text(
-              'Penggunaan Listrik: $penggunaan',
-              style: TextStyle(fontSize: 14, color: Colors.indigo.shade900),
-            ),
-            SizedBox(height: 8),
-            Text(
-              'Total Biaya: $total',
-              style: TextStyle(
+                  color: Colors.indigo.shade900,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              SizedBox(height: 8),
+              Text(
+                'Periode pembayaran: $periode',
+                style: TextStyle(
+                  fontSize: 14,
+                  color: Colors.indigo.shade900,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              SizedBox(height: 8),
+              Text(
+                'Penggunaan Listrik: $penggunaan',
+                style: TextStyle(
+                  fontSize: 14,
+                  color: Colors.indigo.shade900,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              SizedBox(height: 8),
+              Text(
+                'Total Biaya: $total',
+                style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.bold,
-                  color: Colors.indigo.shade900),
-            ),
-          ],
+                  color: Colors.indigo.shade900,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ],
+          ),
         ),
       ),
     );
