@@ -1,4 +1,4 @@
-﻿namespace Eaten
+﻿namespace RestoKu
 {
     partial class FrmRegister
     {
@@ -46,7 +46,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(145, 21);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Register User Eaten";
+            this.label1.Text = "Register User RestoKu";
             // 
             // label2
             // 

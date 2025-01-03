@@ -1,4 +1,4 @@
-# Eaten
+# RestoKu
 tugas akhir Pemrograman visual
 [*] ada 2 level Login
   1. Admin

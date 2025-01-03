@@ -1,4 +1,4 @@
-﻿namespace Eaten
+﻿namespace RestoKu
 {
     partial class FrmMenuUtama
     {
@@ -85,7 +85,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(375, 37);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Aplikasi Pemesanan \"EATEN\"";
+            this.label1.Text = "Aplikasi Pemesanan \"RestoKu\"";
             // 
             // groupBox1
             // 

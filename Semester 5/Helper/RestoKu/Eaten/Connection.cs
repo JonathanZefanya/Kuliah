@@ -7,7 +7,7 @@ using MySql.Data.MySqlClient;
 using System.Data;
 using System.Windows.Forms;
 
-namespace Eaten
+namespace RestoKu
 {
     class Connection
     {

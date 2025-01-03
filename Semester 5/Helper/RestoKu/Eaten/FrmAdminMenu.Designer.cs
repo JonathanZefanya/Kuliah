@@ -1,4 +1,4 @@
-﻿namespace Eaten
+﻿namespace RestoKu
 {
     partial class FrmAdminMenu
     {

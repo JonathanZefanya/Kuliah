@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Eaten
+namespace RestoKu
 {
     public partial class DashboardAdmin : Form
     {

@@ -1,4 +1,4 @@
-﻿namespace Eaten
+﻿namespace RestoKu
 {
     partial class FrmLogin
     {
@@ -46,7 +46,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(127, 21);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Login User Eaten";
+            this.label1.Text = "Login User RestoKu";
             // 
             // txtUsername
             // 
@@ -89,7 +89,7 @@
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(117, 23);
             this.btnRegister.TabIndex = 2;
-            this.btnRegister.Text = "Sign up for Eaten";
+            this.btnRegister.Text = "Sign up for RestoKu";
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 

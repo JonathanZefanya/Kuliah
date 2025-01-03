@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Eaten.Properties
+namespace RestoKu.Properties
 {
 
 

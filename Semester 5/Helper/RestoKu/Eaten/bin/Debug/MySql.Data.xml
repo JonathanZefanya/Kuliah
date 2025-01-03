@@ -9596,7 +9596,7 @@
             It is assumed that this method is only called from inside an active lock.
             </summary>
         </member>
-        <member name="M:MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection">
+        <member name="M:MySql.Data.MySqlClient.MySqlPool.CrRestoKuewPooledConnection">
             <summary>
             It is assumed that this method is only called from inside an active lock.
             </summary>

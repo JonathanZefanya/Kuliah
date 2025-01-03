@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
-namespace Eaten
+namespace RestoKu
 {
 
     public partial class FrmMenuUtama : Form

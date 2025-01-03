@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{A865AA28-D319-4CA8-A351-65798166CA64}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Eaten</RootNamespace>
-    <AssemblyName>Eaten</AssemblyName>
+    <RootNamespace>RestoKu</RootNamespace>
+    <AssemblyName>RestoKu</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

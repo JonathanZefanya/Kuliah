@@ -3,16 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Jonathan Zefanya\\Dokumen\\Kuliah\\Semester 5\\Helper\\RestoKu\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Jonathan Zefanya\\Dokumen\\Kuliah\\Semester 5\\Helper\\RestoKu\\Eaten\\FrmRegister.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Eaten\\FrmRegister.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Jonathan Zefanya\\Dokumen\\Kuliah\\Semester 5\\Helper\\RestoKu\\Eaten\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Eaten\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Jonathan Zefanya\\Dokumen\\Kuliah\\Semester 5\\Helper\\RestoKu\\Eaten\\FrmPembayaran.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Eaten\\FrmPembayaran.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Jonathan Zefanya\\Dokumen\\Kuliah\\Semester 5\\Helper\\RestoKu\\Eaten\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Eaten\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Jonathan Zefanya\\Dokumen\\Kuliah\\Semester 5\\Helper\\RestoKu\\Eaten\\Pengguna.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -44,14 +40,14 @@
               "RelativeDocumentMoniker": "Eaten\\FrmPembayaran.cs",
               "ToolTip": "C:\\Users\\Jonathan Zefanya\\Dokumen\\Kuliah\\Semester 5\\Helper\\RestoKu\\Eaten\\FrmPembayaran.cs",
               "RelativeToolTip": "Eaten\\FrmPembayaran.cs",
-              "ViewState": "AgIAADgAAAAAAAAAAAAAwFsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAAwFsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-03T19:12:41.908Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Pengguna.cs",
               "DocumentMoniker": "C:\\Users\\Jonathan Zefanya\\Dokumen\\Kuliah\\Semester 5\\Helper\\RestoKu\\Eaten\\Pengguna.cs",
               "RelativeDocumentMoniker": "Eaten\\Pengguna.cs",
@@ -59,12 +55,11 @@
               "RelativeToolTip": "Eaten\\Pengguna.cs",
               "ViewState": "AgIAABsAAAAAAAAAAADwvyIAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-03T19:06:52.331Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-03T19:06:52.331Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "FrmLogin.cs",
               "DocumentMoniker": "C:\\Users\\Jonathan Zefanya\\Dokumen\\Kuliah\\Semester 5\\Helper\\RestoKu\\Eaten\\FrmLogin.cs",
               "RelativeDocumentMoniker": "Eaten\\FrmLogin.cs",
@@ -72,25 +67,11 @@
               "RelativeToolTip": "Eaten\\FrmLogin.cs",
               "ViewState": "AgIAAB4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-03T18:58:48.642Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-03T18:58:48.642Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "FrmRegister.cs",
-              "DocumentMoniker": "C:\\Users\\Jonathan Zefanya\\Dokumen\\Kuliah\\Semester 5\\Helper\\RestoKu\\Eaten\\FrmRegister.cs",
-              "RelativeDocumentMoniker": "Eaten\\FrmRegister.cs",
-              "ToolTip": "C:\\Users\\Jonathan Zefanya\\Dokumen\\Kuliah\\Semester 5\\Helper\\RestoKu\\Eaten\\FrmRegister.cs",
-              "RelativeToolTip": "Eaten\\FrmRegister.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAADwvzAAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-03T18:52:36.995Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Jonathan Zefanya\\Dokumen\\Kuliah\\Semester 5\\Helper\\RestoKu\\Eaten\\Program.cs",
               "RelativeDocumentMoniker": "Eaten\\Program.cs",
@@ -103,7 +84,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "Connection.cs",
               "DocumentMoniker": "C:\\Users\\Jonathan Zefanya\\Dokumen\\Kuliah\\Semester 5\\Helper\\RestoKu\\Eaten\\Connection.cs",
               "RelativeDocumentMoniker": "Eaten\\Connection.cs",
@@ -111,8 +92,7 @@
               "RelativeToolTip": "Eaten\\Connection.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-03T18:22:24.528Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-03T18:22:24.528Z"
             }
           ]
         }
