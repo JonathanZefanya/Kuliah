@@ -39,11 +39,11 @@ namespace Eaten
 
             }
 
-            //txtUsername.Enabled = true;
-            //txtPassword.Enabled = true;
-            //btnTambah.Enabled = true;
+            txtUsername.Enabled = true;
+            txtPassword.Enabled = true;
+            btnTambah.Enabled = true;
 
-            //txtUsername.Focus();
+            txtUsername.Focus();
         }
         private void bersih()
         {

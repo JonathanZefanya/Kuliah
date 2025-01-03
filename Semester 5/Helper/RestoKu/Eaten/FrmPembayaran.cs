@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
@@ -17,11 +10,13 @@ namespace Eaten
 
         private long total_harga = 0;
         private int total_item = 0;
+
         public FrmPembayaran()
         {
             InitializeComponent();
         }
-        public FrmPembayaran(long total_harga,int total_item)
+
+        public FrmPembayaran(long total_harga, int total_item)
         {
             InitializeComponent();
             this.total_harga = total_harga;
@@ -37,88 +32,57 @@ namespace Eaten
 
         private void btnkembali_Click(object sender, EventArgs e)
         {
-         FrmMenuUtama utama = new FrmMenuUtama();
-         utama.Show();
-         this.Hide();
+            FrmMenuUtama utama = new FrmMenuUtama();
+            utama.Show();
+            this.Hide();
         }
 
         private void btnBayar_Click(object sender, EventArgs e)
         {
-            String total = txtTotal.Text;
-            String bayar = txtJumlah.Text;
-            int kembalian = Convert.ToInt32(bayar) - Convert.ToInt32(total);
-            if (Convert.ToInt32(bayar) > Convert.ToInt32(total))
+            try
             {
+                int total = Convert.ToInt32(txtTotal.Text);
+                int bayar = Convert.ToInt32(txtJumlah.Text);
+
+                if (bayar < total)
+                {
+                    MessageBox.Show("Maaf, uang anda tidak mencukupi.", "Pengumuman", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                int kembalian = bayar - total;
+
                 if (koneksi.openConnection())
                 {
-                    string query = String.Concat("INSERT INTO tb_pesanan(total_bayar,total_dibayar,kembalian,total_item,status) VALUES ('", total, "','",bayar,"','",kembalian,"','" ,total_item, "','1')");
-                    koneksi.cmd = new MySqlCommand(query, koneksi.connection);
-                    koneksi.cmd.ExecuteNonQuery();
+                    string query = "INSERT INTO tb_pesanan (id_menu, status) VALUES (@id_menu, @status)";
+                    MySqlCommand cmd = new MySqlCommand(query, koneksi.connection);
+                    cmd.Parameters.AddWithValue("@id_menu", 1); // Ganti dengan ID Menu yang sesuai
+                    cmd.Parameters.AddWithValue("@status", "1");
+
+                    cmd.ExecuteNonQuery();
                     koneksi.closeConnection();
 
-                    DialogResult result = MessageBox.Show("Terima kasih sudah memesan, berikut kembalian'"
-                      + kembalian.ToString()
-                      + "' .", "Pengumuman"
-                      , MessageBoxButtons.OK
-                      , MessageBoxIcon.Information
-                      , MessageBoxDefaultButton.Button1);
-                    if (result == DialogResult.OK)
-                    {
-                        FrmMenuUtama utama = new FrmMenuUtama();
-                        utama.Show();
-                        this.Hide();
-                    }
-                }
-              
-            }
-            else if (Convert.ToInt32(bayar) == Convert.ToInt32(total))
-            {
-                if (koneksi.openConnection())
-                {
-                    string query = String.Concat("INSERT INTO tb_pesanan(total_bayar,total_dibayar,total_item,status) VALUES ('", total, "','",bayar,"','" ,total_item, "','1')");
-                    koneksi.cmd = new MySqlCommand(query, koneksi.connection);
-                    koneksi.cmd.ExecuteNonQuery();
-                    koneksi.closeConnection();
+                    MessageBox.Show($"Terima kasih sudah memesan. Kembalian Anda: {kembalian}", "Pengumuman", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    DialogResult hasil = MessageBox.Show("Terima kasih sudah memesan'"
-                        + "' .", "Pengumuman"
-                        , MessageBoxButtons.OK
-                        , MessageBoxIcon.Information
-                        , MessageBoxDefaultButton.Button1);
-                    if (hasil == DialogResult.OK)
-                    {
-                        FrmMenuUtama utama = new FrmMenuUtama();
-                        utama.Show();
-                        this.Hide();
-                    }
+                    FrmMenuUtama utama = new FrmMenuUtama();
+                    utama.Show();
+                    this.Hide();
                 }
-                    
             }
-            else
+            catch (Exception ex)
             {
-                DialogResult result = MessageBox.Show("Maaf uang anda tidak mencukupi, silahkan coba lagi '"
-                   + "' .", "Pengumuman"
-                   , MessageBoxButtons.OK
-                   , MessageBoxIcon.Information
-                   , MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Terjadi kesalahan: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void txtJumlah_TextChanged(object sender, EventArgs e)
         {
-            if(txtJumlah.Text.Trim().Length > 0)
-            {
-                btnBayar.Enabled = true;
-            }
-            else
-            {
-                btnBayar.Enabled = false;
-            }
+            btnBayar.Enabled = !string.IsNullOrEmpty(txtJumlah.Text);
         }
 
         private void txtJumlah_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }

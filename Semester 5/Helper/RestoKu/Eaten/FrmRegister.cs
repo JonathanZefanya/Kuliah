@@ -43,7 +43,8 @@ namespace Eaten
             if (koneksi.openConnection())
             {
                 //string query = String.Concat("INSERT INTO tb_user(username,password) VALUES('",txtUsername.Text,"',sha1('",txtPassword.Text,"')'");
-                string query = String.Concat("INSERT INTO tb_user(username,password,status) VALUES ('",txtUsername.Text, "',sha1('", txtPassword.Text ,"'),'0')");
+                string query = String.Concat("INSERT INTO tb_user(username, password, status, nama) VALUES ('", txtUsername.Text, "', sha1('", txtPassword.Text, "'), '0', 'default_nama')");
+
                 koneksi.cmd = new MySqlCommand(query, koneksi.connection);
                 koneksi.cmd.ExecuteNonQuery();
                 koneksi.closeConnection();
