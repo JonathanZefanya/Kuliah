@@ -1,0 +1,106 @@
+D:\Tugas kuliah\Tugas Akhir Visual\Eaten\Eaten\bin\Debug\Eaten.exe.config
+D:\Tugas kuliah\Tugas Akhir Visual\Eaten\Eaten\bin\Debug\Eaten.exe
+D:\Tugas kuliah\Tugas Akhir Visual\Eaten\Eaten\bin\Debug\Eaten.pdb
+D:\Tugas kuliah\Tugas Akhir Visual\Eaten\Eaten\obj\Debug\Eaten.csprojAssemblyReference.cache
+D:\Tugas kuliah\Tugas Akhir Visual\Eaten\Eaten\obj\Debug\Eaten.FrmMenuUtama.resources
+D:\Tugas kuliah\Tugas Akhir Visual\Eaten\Eaten\obj\Debug\Eaten.Properties.Resources.resources
+D:\Tugas kuliah\Tugas Akhir Visual\Eaten\Eaten\obj\Debug\Eaten.csproj.GenerateResource.cache
+D:\Tugas kuliah\Tugas Akhir Visual\Eaten\Eaten\obj\Debug\Eaten.csproj.CoreCompileInputs.cache
+D:\Tugas kuliah\Tugas Akhir Visual\Eaten\Eaten\obj\Debug\Eaten.exe
+D:\Tugas kuliah\Tugas Akhir Visual\Eaten\Eaten\obj\Debug\Eaten.pdb
+D:\Tugas kuliah\Tugas Akhir Visual\Eaten\Eaten\obj\Debug\Eaten.FrmLogin.resources
+D:\Tugas kuliah\Tugas Akhir Visual\Eaten\Eaten\obj\Debug\Eaten.FrmRegister.resources
+D:\Tugas kuliah\Tugas Akhir Visual\Eaten\Eaten\obj\Debug\Eaten.FrmPembayaran.resources
+D:\Projects_Desktop\Eaten\Eaten\bin\Debug\Eaten.exe.config
+D:\Projects_Desktop\Eaten\Eaten\bin\Debug\Eaten.exe
+D:\Projects_Desktop\Eaten\Eaten\bin\Debug\Eaten.pdb
+D:\Projects_Desktop\Eaten\Eaten\obj\Debug\Eaten.csprojAssemblyReference.cache
+D:\Projects_Desktop\Eaten\Eaten\obj\Debug\Eaten.FrmLogin.resources
+D:\Projects_Desktop\Eaten\Eaten\obj\Debug\Eaten.FrmMenuUtama.resources
+D:\Projects_Desktop\Eaten\Eaten\obj\Debug\Eaten.FrmRegister.resources
+D:\Projects_Desktop\Eaten\Eaten\obj\Debug\Eaten.FrmPembayaran.resources
+D:\Projects_Desktop\Eaten\Eaten\obj\Debug\Eaten.Properties.Resources.resources
+D:\Projects_Desktop\Eaten\Eaten\obj\Debug\Eaten.csproj.GenerateResource.cache
+D:\Projects_Desktop\Eaten\Eaten\obj\Debug\Eaten.csproj.CoreCompileInputs.cache
+D:\Projects_Desktop\Eaten\Eaten\obj\Debug\Eaten.exe
+D:\Projects_Desktop\Eaten\Eaten\obj\Debug\Eaten.pdb
+D:\Projects_Desktop\eaten\Eaten\bin\Debug\MySql.Data.dll
+D:\Projects_Desktop\eaten\Eaten\bin\Debug\Google.Protobuf.dll
+D:\Projects_Desktop\eaten\Eaten\bin\Debug\BouncyCastle.Crypto.dll
+D:\Projects_Desktop\eaten\Eaten\bin\Debug\Ubiety.Dns.Core.dll
+D:\Projects_Desktop\eaten\Eaten\bin\Debug\Renci.SshNet.dll
+D:\Projects_Desktop\eaten\Eaten\bin\Debug\MySql.Data.xml
+D:\Projects_Desktop\eaten\Eaten\obj\Debug\Eaten.csproj.CopyComplete
+D:\Projects_Desktop\eaten\Eaten\obj\Debug\Eaten.FrmAdminMenu.resources
+D:\Projects_Desktop\eaten\Eaten\obj\Debug\Eaten.DashboardAdmin.resources
+D:\Projects_Desktop\eaten\Eaten\obj\Debug\Eaten.Pengguna.resources
+D:\VISUAL\Eaten\Eaten\bin\Debug\Eaten.exe.config
+D:\VISUAL\Eaten\Eaten\bin\Debug\Eaten.exe
+D:\VISUAL\Eaten\Eaten\bin\Debug\Eaten.pdb
+D:\VISUAL\Eaten\Eaten\bin\Debug\MySql.Data.dll
+D:\VISUAL\Eaten\Eaten\bin\Debug\Google.Protobuf.dll
+D:\VISUAL\Eaten\Eaten\bin\Debug\BouncyCastle.Crypto.dll
+D:\VISUAL\Eaten\Eaten\bin\Debug\Ubiety.Dns.Core.dll
+D:\VISUAL\Eaten\Eaten\bin\Debug\Renci.SshNet.dll
+D:\VISUAL\Eaten\Eaten\bin\Debug\MySql.Data.xml
+D:\VISUAL\Eaten\Eaten\obj\Debug\Eaten.csprojAssemblyReference.cache
+D:\VISUAL\Eaten\Eaten\obj\Debug\Eaten.DashboardAdmin.resources
+D:\VISUAL\Eaten\Eaten\obj\Debug\Eaten.FrmAdminMenu.resources
+D:\VISUAL\Eaten\Eaten\obj\Debug\Eaten.FrmLogin.resources
+D:\VISUAL\Eaten\Eaten\obj\Debug\Eaten.FrmMenuUtama.resources
+D:\VISUAL\Eaten\Eaten\obj\Debug\Eaten.FrmRegister.resources
+D:\VISUAL\Eaten\Eaten\obj\Debug\Eaten.FrmPembayaran.resources
+D:\VISUAL\Eaten\Eaten\obj\Debug\Eaten.Pengguna.resources
+D:\VISUAL\Eaten\Eaten\obj\Debug\Eaten.Properties.Resources.resources
+D:\VISUAL\Eaten\Eaten\obj\Debug\Eaten.csproj.GenerateResource.cache
+D:\VISUAL\Eaten\Eaten\obj\Debug\Eaten.csproj.CoreCompileInputs.cache
+D:\VISUAL\Eaten\Eaten\obj\Debug\Eaten.csproj.CopyComplete
+D:\VISUAL\Eaten\Eaten\obj\Debug\Eaten.exe
+D:\VISUAL\Eaten\Eaten\obj\Debug\Eaten.pdb
+D:\Eaten\Eaten\bin\Debug\Eaten.exe.config
+D:\Eaten\Eaten\bin\Debug\Eaten.exe
+D:\Eaten\Eaten\bin\Debug\Eaten.pdb
+D:\Eaten\Eaten\bin\Debug\MySql.Data.dll
+D:\Eaten\Eaten\bin\Debug\Google.Protobuf.dll
+D:\Eaten\Eaten\bin\Debug\BouncyCastle.Crypto.dll
+D:\Eaten\Eaten\bin\Debug\Ubiety.Dns.Core.dll
+D:\Eaten\Eaten\bin\Debug\Renci.SshNet.dll
+D:\Eaten\Eaten\bin\Debug\MySql.Data.xml
+D:\Eaten\Eaten\obj\Debug\Eaten.csprojAssemblyReference.cache
+D:\Eaten\Eaten\obj\Debug\Eaten.DashboardAdmin.resources
+D:\Eaten\Eaten\obj\Debug\Eaten.FrmAdminMenu.resources
+D:\Eaten\Eaten\obj\Debug\Eaten.FrmLogin.resources
+D:\Eaten\Eaten\obj\Debug\Eaten.FrmMenuUtama.resources
+D:\Eaten\Eaten\obj\Debug\Eaten.FrmRegister.resources
+D:\Eaten\Eaten\obj\Debug\Eaten.FrmPembayaran.resources
+D:\Eaten\Eaten\obj\Debug\Eaten.Pengguna.resources
+D:\Eaten\Eaten\obj\Debug\Eaten.Properties.Resources.resources
+D:\Eaten\Eaten\obj\Debug\Eaten.csproj.GenerateResource.cache
+D:\Eaten\Eaten\obj\Debug\Eaten.csproj.CoreCompileInputs.cache
+D:\Eaten\Eaten\obj\Debug\Eaten.csproj.CopyComplete
+D:\Eaten\Eaten\obj\Debug\Eaten.exe
+D:\Eaten\Eaten\obj\Debug\Eaten.pdb
+D:\Eaten\Eaten\obj\Debug\Eaten.Menu.resources
+D:\PEMOGRAMANAN VISUAL\Eaten\Eaten\bin\Debug\Eaten.exe.config
+D:\PEMOGRAMANAN VISUAL\Eaten\Eaten\bin\Debug\Eaten.exe
+D:\PEMOGRAMANAN VISUAL\Eaten\Eaten\bin\Debug\Eaten.pdb
+D:\PEMOGRAMANAN VISUAL\Eaten\Eaten\bin\Debug\MySql.Data.dll
+D:\PEMOGRAMANAN VISUAL\Eaten\Eaten\bin\Debug\Google.Protobuf.dll
+D:\PEMOGRAMANAN VISUAL\Eaten\Eaten\bin\Debug\BouncyCastle.Crypto.dll
+D:\PEMOGRAMANAN VISUAL\Eaten\Eaten\bin\Debug\Ubiety.Dns.Core.dll
+D:\PEMOGRAMANAN VISUAL\Eaten\Eaten\bin\Debug\Renci.SshNet.dll
+D:\PEMOGRAMANAN VISUAL\Eaten\Eaten\bin\Debug\MySql.Data.xml
+D:\PEMOGRAMANAN VISUAL\Eaten\Eaten\obj\Debug\Eaten.csprojAssemblyReference.cache
+D:\PEMOGRAMANAN VISUAL\Eaten\Eaten\obj\Debug\Eaten.DashboardAdmin.resources
+D:\PEMOGRAMANAN VISUAL\Eaten\Eaten\obj\Debug\Eaten.FrmAdminMenu.resources
+D:\PEMOGRAMANAN VISUAL\Eaten\Eaten\obj\Debug\Eaten.FrmLogin.resources
+D:\PEMOGRAMANAN VISUAL\Eaten\Eaten\obj\Debug\Eaten.FrmMenuUtama.resources
+D:\PEMOGRAMANAN VISUAL\Eaten\Eaten\obj\Debug\Eaten.FrmRegister.resources
+D:\PEMOGRAMANAN VISUAL\Eaten\Eaten\obj\Debug\Eaten.FrmPembayaran.resources
+D:\PEMOGRAMANAN VISUAL\Eaten\Eaten\obj\Debug\Eaten.Menu.resources
+D:\PEMOGRAMANAN VISUAL\Eaten\Eaten\obj\Debug\Eaten.Pengguna.resources
+D:\PEMOGRAMANAN VISUAL\Eaten\Eaten\obj\Debug\Eaten.Properties.Resources.resources
+D:\PEMOGRAMANAN VISUAL\Eaten\Eaten\obj\Debug\Eaten.csproj.GenerateResource.cache
+D:\PEMOGRAMANAN VISUAL\Eaten\Eaten\obj\Debug\Eaten.csproj.CopyComplete
+D:\PEMOGRAMANAN VISUAL\Eaten\Eaten\obj\Debug\Eaten.exe
+D:\PEMOGRAMANAN VISUAL\Eaten\Eaten\obj\Debug\Eaten.pdb
